@@ -1,0 +1,24 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "cat-attack",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndresIturria/Cat-Attack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndresIturria/Cat-Attack/issues"
+  },
+  "homepage": "https://github.com/AndresIturria/Cat-Attack#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nunjucks": "^3.2.3"
+  }
+}
