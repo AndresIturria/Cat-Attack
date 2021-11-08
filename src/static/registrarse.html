@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Registro Cat-Attack</title>
+
+<script>
+function comprobarClave(){
+    clave1 = document.registro.clave1.value
+    clave2 = document.registro.clave2.value
+
+    if (clave1 == clave2)
+       alert("Las dos claves son iguales...\nRegistro correcto.")
+    else
+       alert("Las dos claves son distintas...\nRegistro incorrecto. Vuelva a intentarlo más tarde.")
+}
+</script>
+</head>
+
+
+<body>
+<h2> Formulario de Registro en Cat-Attack </h2>
+
+<div class="container my-5" style="width:fit-content; height:fit-content;">
+			<form id="registro" class="bg-dark text-white" method="POST" action="registro">
+
+				<label for="nombre">Nombre*:</label>
+				<input name="name" type="text"  class="form-control" id="nombre" required="required"/><br />
+					
+				<label for="apellido 1">Apellidos:</label>
+				<input name="apellido1" type="text"  class="form-control" id="apellido_1" required="required"/><br />
+				
+				<label for="nombreUsuario">Nombre de usuario*:</label>
+				<input name="UserName" type="text"  class="form-control" id="nombreUsuario" required="required"/><br />
+
+				<label for="correo">Email*:</label>
+				<input name="email" type="email"  class="form-control" id="email" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/><br />
+				
+				<label for="dni">DNI*:</label>
+				<input name="dni" type="text"  class="form-control" id="dni" required="required"/><br />
+        <!--
+				<label for="telefono">Teléfono*:</label>
+				<input name="phone" type="tel"  class="form-control" id="telefono" required="required" pattern="^\d{9}$"/><br />
+        -->
+				<label for="clave1">Contraseña* (requiere nº, minus, mayus, y mínimo de 8 caracteres):</label>
+				<input name="clave1" type="password"  class="form-control" id="clave1" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/><br />
+				
+        <label for="clave2">Confirmar contraseña*:</label>
+        <input name="clave2" type="password"  class="form-control" id="clave2" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/><br />
+
+        <br />
+        <br />
+				<div id="aster" > * | Campos obligatorios</div> <br />
+
+				<input type="submit" onclick = "comprobarClave()" class="btn btn-primary" value="Registrarse">
+				<input type="button" onclick="location.href='login.html'"class="btn btn-outline-secondary" value="Cancelar" style="color:black">
+
+        <br />
+        <br />
+												
+			</form>  
+		</div>	
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Portfolio -->
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4"> <span class="copyright">Copyright &copy; Cat-Attack 2021</span> </div>
+    </div>
+  </div>
+</footer>
+</div>
+
+
+</body>
+</html>
