@@ -1,1 +1,41 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Cat-Attack!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+
+    <div id="login-title">
+        <h1>Cat-Attack</h1>
+    </div>
+
+    <div id="login-form">
+        <form id="formulario" method="POST" action="/">
+            <div class="form-group">
+                <label for="username">Nombre de Usuario*:</label>
+                <input type="text" id="usuario" required="required" class="form-control">  <br/>
+            </div>
+
+            <div class="form-group">						
+                <label for="contraseña">Contraseña* (requiere nº, minus, mayus, y mínimo de 6 caracteres):</label>
+                <input type="password" id="contraseña" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" class="form-control"/><br/>
+            </div>
+            <p> * | Campos obligatorios </p> <br/>
+
+            <input type="submit" value="Iniciar Sesión" class="btn btn-primary">
+            <br>
+            <br>
+            <a href="/" alt="placehilder">Se me olvidó la contraseña</a>
+            <br>
+            <br>
+            <input type="submit" value="      Crear  Usuario      " class="btn btn-primary">
+            <input type="submit" value="Entrar Como Invitado" class="btn btn-primary">
+                                                        
+        </form>
+        
+    </div>
+</body>
+</html>

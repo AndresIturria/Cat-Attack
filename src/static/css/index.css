@@ -1,0 +1,17 @@
+body {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#login-title{
+    padding: 5%;
+}
+
+#login-form {
+    padding: 5%;
+    box-sizing: border-box;
+    border-width:2px;
+    border-style:solid;
+    border-color:black;
+}
