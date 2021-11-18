@@ -1,12 +1,12 @@
-const http = require('http')
+const http = require('http');
 var express = require('express');
 var app = express();
-var nunjucks = require('nunjucks')
+var nunjucks = require('nunjucks');
 
 var port = process.env.PORT || 9000 ;
 
-
-nunjucks.configure('static', {
+// Nunjuck config
+nunjucks.configure('static/views', {
     autoescape: true,
     express: app
 });
@@ -15,41 +15,27 @@ nunjucks.configure('static', {
 app.engine( 'html', nunjucks.render ) ;
 app.set( 'view engine', 'html' ) ;
 
-app.get('/', function(req, res) {
+//Middleware
+app.use(express.json());       // to support JSON-encoded bodies
+app.use(express.urlencoded( { extended: true } )); // to support URL-encoded bodies
+
+//css
+app.get('/index.css', function(req, res) {
+  res.sendFile(__dirname + '/static/css/index.css');
+});
+app.get('/base.css', function(req, res) {
+  res.sendFile(__dirname + '/static/css/base.css');
+});
+
+app.route('/')
+.get(function(req, res) {
   res.render('index.html');
+})
+.post(function(req, res){
+  console.log(req.body.username)
+  res.send(req.body)
+//res.render('dashboard.html')
 });
-
-app.get('/dashboard', function(req, res) {
-  res.render('dashboard.html');
-});
-
-app.get('/registrarse', function(req, res) {
-  res.render('registrarse.html');
-});
-
-app.get('/listadeadopcion', function(req, res) {
-  res.render('listadeadopcion.html');
-});
-
-app.get('/consejos', function(req, res) {
-  res.render('consejos.html');
-});
-
-app.get('/catstitting', function(req, res) {
-  res.render('catsitting.html');
-});
-
-app.get('/incidencias', function(req, res) {
-  res.render('incidencias.html');
-});
-
-app.get('/perfil', function(req, res) {
-    res.render('perfil.html');
-  });
-
-app.get('/perfil/solicitudcatsitter', function(req, res) {
-    res.render('solicitudcatsitter.html');
-  });
 
 app.listen( port ) ;
 console.log( 'Listening on port %s...', port ) ;
