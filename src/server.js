@@ -2,77 +2,8 @@ const http = require('http');
 var express = require('express');
 var app = express();
 var nunjucks = require('nunjucks');
-const { Sequelize, Model, DataTypes } = require('sequelize');
+const {db, User} = require('./db')
 var port = process.env.PORT || 9000 ;
-
-
-//db
-
-const db = new Sequelize('catattack', 'root', 'root', {  //process.env.DB_USER, process.env.DB_PASSWORD, { para despues
-  dialect: 'sqlite',
-  storage: 'catattack.db',
-  dialectOptions: {
-    // Your sqlite3 options here
-  }
-});
-
-const User = db.define('user', {
-  // Model attributes are defined here
-  id: {
-    type: DataTypes.UUID,
-    primaryKey: true,
-    defaultValue: DataTypes.UUIDV4
-  },
-  firstName: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  lastName1: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  lastName2:{
-    type: DataTypes.STRING
-    // allowNull defaults to true
-  },
-  username: {
-    type: DataTypes.TEXT,
-    unique: true
-  },
-  password: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  birthday: {
-    type: DataTypes.DATEONLY, // yyyy-mm-dd
-    allowNull: false
-  },
-  email:{
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  isAdmin:{
-    type: DataTypes.BOOLEAN,
-    defaultValue: false
-  }
-
-}, {
-  // Other model options go here
-  tableName: 'users'
-});
-
-(async () => {
-  await db.sync({ force: true });
-  // Code here
-  const admin = await User.create({ firstName: "admin", lastName1: "admin", username: "admin", password: "admin", birthday:"1900-01-01", email:"admin@catattack.com", isAdmin:"true"})
-  const normaluser = await User.create({ firstName: "test", lastName1:"test", lastName2:"test", username: "test", password: "test", birthday:"1996-05-04", email: "test@catattack.com"})
-  const guestuser = await User.create({ firstName: "guest", lastName1:"guest", lastName2:"guest", username: "guest", password: "guest", birthday:"1996-05-04", email: "guest@catattack.com"})
-  User.sync();
-  const users = await User.findAll();
-  console.log(users.every(user => user instanceof User)); // true
-  console.log("All users:", JSON.stringify(users, null, 2));
-})();
-
 
 // Nunjuck config
 nunjucks.configure('static/views', {
