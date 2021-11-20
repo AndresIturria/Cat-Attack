@@ -45,20 +45,21 @@ app.get('/', function(req, res) {
 });
 
 app.post('/', function(req, res){
-  const aux = await models.user.findAll({
+
+  const aux = models.user.findAll({
     where:{
       username: req.body.user,
       password: req.body.passw
-    }
-  }).then(result => {
-    if (aux.length != 0){
-      res.render(dashboard.html)
-    }
-    else {
-      res.send("error de login")
-    }
+    },
+    raw: true,
+  }).then(users => {
+    return users
   }).catch(error=>{
-    console.log("error")
+    console.log(error)
+  })
+
+  aux.then(function(users){
+    console.log(users)
   })
   
 });
