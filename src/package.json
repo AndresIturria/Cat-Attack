@@ -19,6 +19,8 @@
   "homepage": "https://github.com/AndresIturria/Cat-Attack#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "nunjucks": "^3.2.3"
+    "nunjucks": "^3.2.3",
+    "sequelize": "^6.11.0",
+    "sqlite3": "^5.0.2"
   }
 }
