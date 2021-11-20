@@ -2,7 +2,7 @@ const http = require('http');
 var express = require('express');
 var app = express();
 var nunjucks = require('nunjucks');
-const {db, User} = require('./db')
+//const {db, User} = require('./db')
 var port = process.env.PORT || 9000 ;
 
 // Nunjuck config
@@ -36,7 +36,6 @@ app.route('/')
   inputUser = req.body.user
   inputPassword = req.body.passw
 
-  res.render('dashboard.html')
 });
 
 app.listen( port ) ;
