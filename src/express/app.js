@@ -17,7 +17,7 @@ app.set( 'view engine', 'html' ) ;
 app.use(express.json());       // to support JSON-encoded bodies
 app.use(express.urlencoded( { extended: true } )); // to support URL-encoded bodies
 
-
+//no se para que es esto
 // We create a wrapper to workaround async errors not being transmitted correctly.
 /* function makeHandlerAwareOfAsyncErrors(handler) {
 	return async function(req, res, next) {
@@ -46,7 +46,8 @@ app.get('/', function(req, res) {
 
 app.post('/', function(req, res){
 
-  const aux = models.user.findAll({
+  //query de users con el usuario y la contraseña proporcionado en el body
+  const users = models.user.findAll({
     where:{
       username: req.body.user,
       password: req.body.passw
@@ -58,9 +59,18 @@ app.post('/', function(req, res){
     console.log(error)
   })
 
-  aux.then(function(users){
-    console.log(users)
-  })
-  
+  // Si hay users con la combinacion manda a dashboard, si no manda un error.
+  const auth = () => {
+    users.then((users) => {
+      if(users.length != 0){
+        res.render('dashboard.html')
+      }
+      else{
+        res.send("combinacion usuario-contraseña incorrecta")
+      }
+    });
+  };
+  auth();
+
 });
 module.exports = app;
