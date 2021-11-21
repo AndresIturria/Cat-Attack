@@ -7,8 +7,8 @@
 
 <script>
 function comprobarClave(){
-    clave1 = document.registro.clave1.value
-    clave2 = document.registro.clave2.value
+    clave1 = document.registro.password.value
+    clave2 = document.registro.passwordConfirmation.value
 
     if (clave1 == clave2)
        alert("Las dos claves son iguales...\nRegistro correcto.")
@@ -23,18 +23,21 @@ function comprobarClave(){
 <h2> Formulario de Registro en Cat-Attack </h2>
 
 <div class="container my-5" style="width:fit-content; height:fit-content;">
-			<form id="registro" class="bg-dark text-white" method="POST" action="registro">
+			<form id="registro" class="bg-dark text-white" method="POST" action="/registrarse">
 
-				<label for="nombre">Nombre*:</label>
-				<input name="name" type="text"  class="form-control" id="nombre" required="required"/><br />
+				<label for="firstName">Nombre*:</label>
+				<input name="firstName" type="text"  class="form-control" id="firstName" required="required"/><br />
 					
-				<label for="apellido 1">Apellidos:</label>
-				<input name="apellido1" type="text"  class="form-control" id="apellido_1" required="required"/><br />
-				
-				<label for="nombreUsuario">Nombre de usuario*:</label>
-				<input name="UserName" type="text"  class="form-control" id="nombreUsuario" required="required"/><br />
+				<label for="lastName1">Apellido 1:</label>
+				<input name="lastName1" type="text"  class="form-control" id="lastName1" required="required"/><br />
 
-				<label for="correo">Email*:</label>
+        <label for="lastName2">Apellido 2:</label>
+				<input name="lastName2" type="text"  class="form-control" id="lastName2" required="required"/><br />
+				
+				<label for="userName">Nombre de usuario*:</label>
+				<input name="userName" type="text"  class="form-control" id="userName" required="required"/><br />
+
+				<label for="email">Email*:</label>
 				<input name="email" type="email"  class="form-control" id="email" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/><br />
 				
 				<label for="dni">DNI*:</label>
@@ -43,11 +46,11 @@ function comprobarClave(){
 				<label for="telefono">Teléfono*:</label>
 				<input name="phone" type="tel"  class="form-control" id="telefono" required="required" pattern="^\d{9}$"/><br />
         -->
-				<label for="clave1">Contraseña* (requiere nº, minus, mayus, y mínimo de 8 caracteres):</label>
-				<input name="clave1" type="password"  class="form-control" id="clave1" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/><br />
+				<label for="password">Contraseña* (requiere nº, minus, mayus, y mínimo de 8 caracteres):</label>
+				<input name="password" type="password"  class="form-control" id="password" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/><br />
 				
-        <label for="clave2">Confirmar contraseña*:</label>
-        <input name="clave2" type="password"  class="form-control" id="clave2" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/><br />
+        <label for="passwordConfirmation">Confirmar contraseña*:</label>
+        <input name="passwordConfirmation" type="password"  class="form-control" id="passwordConfirmation" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/><br />
 
         <br />
         <br />
