@@ -1,26 +1,16 @@
-<!doctype html>
-<html>
+{% block head %}
 
-<head>
-<meta charset="utf-8">
-<title>Registro Cat-Attack</title>
+  <title>Registro Cat-Attack</title>
 
-<script>
-function comprobarClave(){
-    clave1 = document.registro.password.value
-    clave2 = document.registro.passwordConfirmation.value
+{% endblock %}
 
-    if (clave1 == clave2)
-       alert("Las dos claves son iguales...\nRegistro correcto.")
-    else
-       alert("Las dos claves son distintas...\nRegistro incorrecto. Vuelva a intentarlo más tarde.")
-}
-</script>
-</head>
+{% block header %}
 
-
-<body>
   <h2> Formulario de Registro en Cat-Attack </h2>
+
+{% endblock %}
+
+{% block content %}
 
   {% if signupMessage  %}
     <div><h5>{{ signupMessage }}</h5></div>
@@ -31,19 +21,19 @@ function comprobarClave(){
 
       <label for="firstName">Nombre*:</label>
       <input name="firstName" type="text"  class="form-control" id="firstName" required="required"/><br />
-        
+
       <label for="lastName1">Apellido 1:</label>
       <input name="lastName1" type="text"  class="form-control" id="lastName1" required="required"/><br />
 
       <label for="lastName2">Apellido 2:</label>
       <input name="lastName2" type="text"  class="form-control" id="lastName2" required="required"/><br />
-      
+
       <label for="userName">Nombre de usuario*:</label>
       <input name="userName" type="text"  class="form-control" id="userName" required="required"/><br />
 
       <label for="email">Email*:</label>
       <input name="email" type="email"  class="form-control" id="email" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/><br />
-      
+
       <label for="dni">DNI*:</label>
       <input name="dni" type="text"  class="form-control" id="dni" required="required"/><br />
       <!--
@@ -52,7 +42,7 @@ function comprobarClave(){
       -->
       <label for="password">Contraseña* (requiere nº, minus, mayus, y mínimo de 8 caracteres):</label>
       <input name="password" type="password"  class="form-control" id="password" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/><br />
-      
+
       <label for="passwordConfirmation">Confirmar contraseña*:</label>
       <input name="passwordConfirmation" type="password"  class="form-control" id="passwordConfirmation" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/><br />
 
@@ -65,23 +55,21 @@ function comprobarClave(){
 
       <br />
       <br />
-                      
-    </form>  
+
+    </form>
   </div>
 
+{% endblock %}
+{% block footer %}
+  <script>
+    function comprobarClave(){
+      clave1 = document.registro.password.value
+      clave2 = document.registro.passwordConfirmation.value
 
-<!-- Portfolio -->
-
-
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4"> <span class="copyright">Copyright &copy; Cat-Attack 2021</span> </div>
-    </div>
-  </div>
-</footer>
-</div>
-
-
-</body>
-</html>
+      if (clave1 == clave2)
+        alert("Las dos claves son iguales...\nRegistro correcto.")
+      else
+        alert("Las dos claves son distintas...\nRegistro incorrecto. Vuelva a intentarlo más tarde.")
+    }
+  </script>
+{% endblock %}
