@@ -1,7 +1,22 @@
-Para trabajar y ejecutar el proyecto se debe estar en carpeta src. <br>
-Instalar dependencias: npm install <br>
-Ejecutar servidor: npm start -> esto ejecuta index.js <br>
-En carpeta express: app.js contiene las rutas <br>
-En Sequelize: modelo de la base de datos. <br>
-En sqlite-database: setup.js -> script para crear la base de datos, usuarios predeterminados: test, admin y guest.
+Algunas notas:
 
+
+Para saber si mongo esta corriendo en windows: tasklist /FI "IMAGENAME eq mongod.exe"
+
+
+By default, mongodb server will start at port 27017
+
+
+abrir consola de mongo:
+C:\Program Files\MongoDB\Server\5.0\bin         ejecutar mongo
+
+
+Algunos comandos para shell de mongo:
+show dbs
+use cat-attack
+show collections
+db.users.find().pretty()
+
+
+nodemon monitorea los cambios en el codigo y reinicia el servidor.
+npx nodemon ./index.js

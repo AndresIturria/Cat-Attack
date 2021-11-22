@@ -4,6 +4,7 @@ const path = require('path');
 const morgan = require('morgan');
 const passport = require('passport');
 const session = require('express-session');
+const flash = require('connect-flash');
 
 //Initializations
 require('./database');
@@ -30,8 +31,13 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
+app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
+app.use((req, res, next) => { //Esto es un Middleware propio para poder acceder al mensaje de signup en la vista de registrarse.
+    app.locals.signupMessage = req.flash('signupMessage');
+    next(); // Sin este next se va a quedar estancado aqui
+});
 
 
 //Routes

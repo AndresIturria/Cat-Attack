@@ -22,6 +22,10 @@ function comprobarClave(){
 <body>
 <h2> Formulario de Registro en Cat-Attack </h2>
 
+{% if signupMessage  %}
+  <div><h5>{{ signupMessage }}</h5></div>
+{% endif %}
+
 <div class="container my-5" style="width:fit-content; height:fit-content;">
 			<form id="registro" class="bg-dark text-white" method="POST" action="/registrarse">
 

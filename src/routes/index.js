@@ -12,9 +12,11 @@ router.route('/')
     .get(function(req, res, next){
         res.render('index.html')
     })
-    .post(function(req, res, next){
-        res.render('index.html')
-    })
+    .post(passport.authenticate('local-signin', {
+        successRedirect: '/dashboard',
+        failureRedirect: '/',
+        passReqToCallback: true
+    }));
 
 router.route('/registrarse')
     .get(function(req, res, next){
@@ -26,8 +28,9 @@ router.route('/registrarse')
         passReqToCallback: true
     }));
 
-/* router.route('/profile')
+ router.route('/dashboard')
     .get(function(req, res, next){
-        res.render('profile');
-}); */
+        res.render('dashboard.html');
+    });
+
 module.exports = router;
