@@ -33,6 +33,7 @@ passport.use('local-signup', new LocalStrategy({
         newUser.lastName2 = req.body.lastName2;
         newUser.email = req.body.email;
         newUser.birthday = Date();
+        newUser.isAdmin = "false";
         await newUser.save();
         done(null, newUser);
 
