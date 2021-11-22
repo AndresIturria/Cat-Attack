@@ -16,12 +16,13 @@ app.set('port',process.env.port || 9000);
 app.engine( 'html', nunjucks.render) ;
 app.set( 'view engine', 'html');
 
-nunjucks.configure(path.join(__dirname, '/static/views'), {
+nunjucks.configure(path.join(__dirname, '/views'), {
     autoescape: true,
     express: app
 });
 
 //middlewares
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());       // to support JSON-encoded bodies
 app.use(express.urlencoded( { extended: true } )); // to support URL-encoded bodies
 morgan.token('body', (req, res) => JSON.stringify(req.body));
@@ -46,8 +47,20 @@ app.use((req, res, next) => { //Esto es un Middleware propio para poder acceder 
 app.use('/', require('./routes/index'));
 
 
-//starting the server
-
-app.listen(app.get('port'), () => {
-    console.log('Server on Port', app.get('port'))
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  next(createError(404));
 });
+
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error.njk');
+});
+
+module.exports = app;
