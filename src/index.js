@@ -35,7 +35,9 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 app.use((req, res, next) => { //Esto es un Middleware propio para poder acceder al mensaje de signup en la vista de registrarse.
+    app.locals.signinMessage = req.flash('signinMessage');
     app.locals.signupMessage = req.flash('signupMessage');
+    app.locals.user = req.user;
     next(); // Sin este next se va a quedar estancado aqui
 });
 

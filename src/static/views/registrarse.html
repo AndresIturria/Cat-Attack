@@ -20,59 +20,54 @@ function comprobarClave(){
 
 
 <body>
-<h2> Formulario de Registro en Cat-Attack </h2>
+  <h2> Formulario de Registro en Cat-Attack </h2>
 
-{% if signupMessage  %}
-  <div><h5>{{ signupMessage }}</h5></div>
-{% endif %}
+  {% if signupMessage  %}
+    <div><h5>{{ signupMessage }}</h5></div>
+  {% endif %}
 
-<div class="container my-5" style="width:fit-content; height:fit-content;">
-			<form id="registro" class="bg-dark text-white" method="POST" action="/registrarse">
+  <div class="container my-5" style="width:fit-content; height:fit-content;">
+    <form id="registro" class="bg-dark text-white" method="POST" action="/registrarse">
 
-				<label for="firstName">Nombre*:</label>
-				<input name="firstName" type="text"  class="form-control" id="firstName" required="required"/><br />
-					
-				<label for="lastName1">Apellido 1:</label>
-				<input name="lastName1" type="text"  class="form-control" id="lastName1" required="required"/><br />
+      <label for="firstName">Nombre*:</label>
+      <input name="firstName" type="text"  class="form-control" id="firstName" required="required"/><br />
+        
+      <label for="lastName1">Apellido 1:</label>
+      <input name="lastName1" type="text"  class="form-control" id="lastName1" required="required"/><br />
 
-        <label for="lastName2">Apellido 2:</label>
-				<input name="lastName2" type="text"  class="form-control" id="lastName2" required="required"/><br />
-				
-				<label for="userName">Nombre de usuario*:</label>
-				<input name="userName" type="text"  class="form-control" id="userName" required="required"/><br />
+      <label for="lastName2">Apellido 2:</label>
+      <input name="lastName2" type="text"  class="form-control" id="lastName2" required="required"/><br />
+      
+      <label for="userName">Nombre de usuario*:</label>
+      <input name="userName" type="text"  class="form-control" id="userName" required="required"/><br />
 
-				<label for="email">Email*:</label>
-				<input name="email" type="email"  class="form-control" id="email" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/><br />
-				
-				<label for="dni">DNI*:</label>
-				<input name="dni" type="text"  class="form-control" id="dni" required="required"/><br />
-        <!--
-				<label for="telefono">Teléfono*:</label>
-				<input name="phone" type="tel"  class="form-control" id="telefono" required="required" pattern="^\d{9}$"/><br />
-        -->
-				<label for="password">Contraseña* (requiere nº, minus, mayus, y mínimo de 8 caracteres):</label>
-				<input name="password" type="password"  class="form-control" id="password" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/><br />
-				
-        <label for="passwordConfirmation">Confirmar contraseña*:</label>
-        <input name="passwordConfirmation" type="password"  class="form-control" id="passwordConfirmation" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/><br />
+      <label for="email">Email*:</label>
+      <input name="email" type="email"  class="form-control" id="email" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/><br />
+      
+      <label for="dni">DNI*:</label>
+      <input name="dni" type="text"  class="form-control" id="dni" required="required"/><br />
+      <!--
+      <label for="telefono">Teléfono*:</label>
+      <input name="phone" type="tel"  class="form-control" id="telefono" required="required" pattern="^\d{9}$"/><br />
+      -->
+      <label for="password">Contraseña* (requiere nº, minus, mayus, y mínimo de 8 caracteres):</label>
+      <input name="password" type="password"  class="form-control" id="password" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/><br />
+      
+      <label for="passwordConfirmation">Confirmar contraseña*:</label>
+      <input name="passwordConfirmation" type="password"  class="form-control" id="passwordConfirmation" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/><br />
 
-        <br />
-        <br />
-				<div id="aster" > * | Campos obligatorios</div> <br />
+      <br />
+      <br />
+      <div id="aster" > * | Campos obligatorios</div> <br />
 
-				<input type="submit" onclick = "comprobarClave()" class="btn btn-primary" value="Registrarse">
-				<input type="button" onclick="location.href='login.html'"class="btn btn-outline-secondary" value="Cancelar" style="color:black">
+      <input type="submit" onclick = "comprobarClave()" class="btn btn-primary" value="Registrarse">
+      <input type="button" onclick="location.href='login.html'"class="btn btn-outline-secondary" value="Cancelar" style="color:black">
 
-        <br />
-        <br />
-												
-			</form>  
-		</div>	
-        </div>
-      </div>
-    </div>
+      <br />
+      <br />
+                      
+    </form>  
   </div>
-</div>
 
 
 <!-- Portfolio -->

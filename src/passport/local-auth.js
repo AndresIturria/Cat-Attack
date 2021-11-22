@@ -20,7 +20,6 @@ passport.use('local-signup', new LocalStrategy({
 }, async (req, username, password, done) => {
 
     const existCheck = await User.findOne({username: username});
-    console.log(existCheck)
 
     if(existCheck){ //si existe el username manda un error
         return done(null, false, req.flash('signupMessage','Username is taken.'));
@@ -54,5 +53,5 @@ passport.use('local-signin', new LocalStrategy({
     if(!existCheck.validatePassword(password)){
         return done(null, false, req.flash('signinMessage', 'Incorrect Password'));
     }
-    done(null, existCheck);
+    return done(null, existCheck);
 }));
