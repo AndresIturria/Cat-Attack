@@ -44,14 +44,14 @@
       <input name="password" type="password"  class="form-control" id="password" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/><br />
 
       <label for="passwordConfirmation">Confirmar contraseña*:</label>
-      <input name="passwordConfirmation" type="password"  class="form-control" id="passwordConfirmation" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/><br />
+      <input name="passwordConfirmation" type="password"  class="form-control" id="passwordConfirmation" oninput="check(this)" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/><br/>
 
       <br />
       <br />
       <div id="aster" > * | Campos obligatorios</div> <br />
 
-      <input type="submit" onclick = "comprobarClave()" class="btn btn-primary" value="Registrarse">
-      <input type="button" onclick="location.href='login.html'"class="btn btn-outline-secondary" value="Cancelar" style="color:black">
+      <input type="submit" onclick ="comprobarClave()" class="btn btn-primary" value="registrarse">
+      <input type="button" onclick="location.href='/'" class="btn btn-outline-secondary" value="Cancelar" style="color:black">
 
       <br />
       <br />
@@ -61,15 +61,14 @@
 
 {% endblock %}
 {% block footer %}
-  <script>
-    function comprobarClave(){
-      clave1 = document.registro.password.value
-      clave2 = document.registro.passwordConfirmation.value
-
-      if (clave1 == clave2)
-        alert("Las dos claves son iguales...\nRegistro correcto.")
-      else
-        alert("Las dos claves son distintas...\nRegistro incorrecto. Vuelva a intentarlo más tarde.")
+  <script type='text/javascript'>
+    function check(input) {
+      if (input.value != document.getElementById('password').value) {
+        input.setCustomValidity('Password Must be Matching.');
+      } else {
+        // input is valid -- reset the error message
+        input.setCustomValidity('');
+      }
     }
   </script>
 {% endblock %}
