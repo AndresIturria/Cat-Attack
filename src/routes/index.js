@@ -29,8 +29,15 @@ router.route('/registrarse')
     }));
 
  router.route('/dashboard')
-    .get(function(req, res, next){
+    .get(isAuthenticated, function(req, res, next){
         res.render('dashboard.html');
     });
+
+function isAuthenticated(req, res, next) {
+    if(req.isAuthenticated()) {
+        return next();
+    }
+    res.redirect('/')
+}
 
 module.exports = router;
