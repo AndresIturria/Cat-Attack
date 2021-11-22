@@ -1,46 +1,47 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Cat-Attack!</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+{% extends "layout.njk" %}
+{% block head %}
+    <title>Cat-Attack!</title>
     <link rel="stylesheet" href="http://localhost:9000/index.css">
-</head>
-<body>
+{% endblock %}
 
+{% block header %}
     <div id="login-title">
         <h1>Cat-Attack</h1>
     </div>
-    
+
     {% if signinMessage  %}
-        <div><h5>{{ signinMessage }}</h5></div>
+    <div><h5>{{ signinMessage }}</h5></div>
     {% endif %}
-    
-    <div id="login-form">
-        <form id="formulario" method="POST" action="/">
-            <div class="form-group">
-                <label for="username">Nombre de Usuario*:</label>
-                <input type="text" name="username" id="username" required="required" class="form-control">  <br/>
-            </div>
 
-            <div class="form-group">						
-                <label for="password">Contraseña* (requiere nº, minus, mayus, y mínimo de 6 caracteres):</label>
-                <input type="password" name="password" id="password" required="required"  class="form-control"/><br/>
-                <!-- Para filtrar la contraseña poner en el input de password pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" -->
-            </div>
-            <p> * | Campos obligatorios </p> <br/>
+{% endblock %}
 
-            <input type="submit" value="Iniciar Sesión" class="btn btn-primary">
-            <br>
-            <br>
-            <a href="/" alt="placeholder">Se me olvidó la contraseña</a>
-            <br>
-            <br>
-            <!--<input type="submit" value="      Crear  Usuario      " class="btn btn-primary">-->
-            <!--<input type="submit" value="Entrar Como Invitado" class="btn btn-primary">-->
-                                                        
-        </form>
-        
-    </div>
-</body>
-</html>
+{% block content %}
+
+<div id="login-form">
+    <form id="formulario" method="POST" action="/">
+        <div class="form-group">
+            <label for="username">Nombre de Usuario*:</label>
+            <input type="text" name="username" id="username" required="required" class="form-control">  <br/>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Contraseña* (requiere nº, minus, mayus, y mínimo de 6 caracteres):</label>
+            <input type="password" name="password" id="password" required="required"  class="form-control"/><br/>
+            <!-- Para filtrar la contraseña poner en el input de password pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" -->
+        </div>
+        <p> * | Campos obligatorios </p> <br/>
+
+        <input type="submit" value="Iniciar Sesión" class="btn btn-primary">
+        <br>
+        <br>
+        <a href="/" alt="placeholder">Se me olvidó la contraseña</a>
+        <br>
+        <br>
+        <!--<input type="submit" value="      Crear  Usuario      " class="btn btn-primary">-->
+        <!--<input type="submit" value="Entrar Como Invitado" class="btn btn-primary">-->
+
+    </form>
+
+</div>
+{% endblock %}
+{% block footer %} {% endblock %}

@@ -10,7 +10,7 @@ router.route('/index.css')
 
 router.route('/') 
     .get(function(req, res, next){
-        res.render('index.html')
+        res.render('index.njk')
     })
     .post(passport.authenticate('local-signin', {
         successRedirect: '/dashboard',
@@ -20,7 +20,7 @@ router.route('/')
 
 router.route('/registrarse')
     .get(function(req, res, next){
-        res.render('registrarse.html')
+        res.render('registrarse.njk')
     })
     .post(passport.authenticate('local-signup', {
         successRedirect: '/',
@@ -30,7 +30,7 @@ router.route('/registrarse')
 
  router.route('/dashboard')
     .get(isAuthenticated, function(req, res, next){
-        res.render('dashboard.html');
+        res.render('dashboard.njk');
     });
 
 function isAuthenticated(req, res, next) {
