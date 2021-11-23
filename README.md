@@ -1,6 +1,6 @@
 # Cat-Attack
 
-##Dev Instructions
+## Dev Instructions
 
 Install dependencies:
 >npm install
@@ -13,7 +13,7 @@ The index page will be at: [127.0.0.1:3000](127.0.0.1:3000)
 To run the server with nodemon (monitor the changes and restarts the server):
 >npx nodemon ./bin/www
 
-##Database
+## Database
 
 MongoDB is used, link for download: [MongoDB Community Server](https://www.mongodb.com/try/download/community)
 
