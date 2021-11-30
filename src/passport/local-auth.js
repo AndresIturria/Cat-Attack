@@ -54,5 +54,5 @@ passport.use('local-signin', new LocalStrategy({
     if(!existCheck.validatePassword(password)){
         return done(null, false, req.flash('signinMessage', 'Incorrect Password'));
     }
-    return done(null, existCheck);
+    return done(null, existCheck); //existCheck se guarda como req.user o req.session.user
 }));
