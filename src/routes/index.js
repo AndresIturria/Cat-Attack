@@ -22,6 +22,13 @@ router.route('/registrarse')
         passReqToCallback: true
     }));
 
+router.route('/logout')
+    .get(function(req, res, next){
+        req.logout();
+        res.redirect('/');
+})
+
+
  router.route('/dashboard')
     .get(isAuthenticated, function(req, res, next){
         res.render('dashboard.njk');
