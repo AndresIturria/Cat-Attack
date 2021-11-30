@@ -1,12 +1,13 @@
 {% extends "layoutNav.njk" %}
 
 {% block head %}
-<title>Dashboard</title>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/stylesheets/dashboard.css">
 {% endblock %}
 
 {% block nav %}
     <li class="nav-item active">
-        <a class="nav-link" href="#">Inicio<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#">Inicio<span class="sr-only"></span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="#">Adopción</a>
@@ -27,12 +28,16 @@
 {% endblock %}
 
 {% block header %}
-    <h1> Bienvenido a Cat-Attack {{ user.firstName }}</h1>
+    <div id="dash-header">
+        <h1> Bienvenido a Cat-Attack {{ user.firstName }}</h1>
+    </div>
 {% endblock %}
 
 {% block content %}
-    <img src="/img/foto_dashboard1.jpg">
-    <img src="/img/foto_dashboard2.jpg">
+    <div id="img-block">
+        <img class="img-center-dash" src="/img/foto_dashboard1.jpg">
+        <img class="img-center-dash" src="/img/foto_dashboard2.jpg">
+    </div>
 {% endblock %}
 
 {% block footer %} {% endblock %}

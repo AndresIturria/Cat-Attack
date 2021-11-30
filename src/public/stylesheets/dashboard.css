@@ -1,0 +1,15 @@
+#img-block{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+#dash-header{
+    margin: 0 auto;
+    text-align: center;
+    padding: 3%;
+}
+
+.img-center-dash{
+    padding-left: 5%;
+    padding-right: 5%;
+}
