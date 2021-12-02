@@ -1,7 +1,7 @@
-#img-block{
-    width: 90%;
-    margin: 0 auto;
-    text-align: center;
+#img-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 #dash-header{
     margin: 0 auto;
@@ -9,7 +9,9 @@
     padding: 3%;
 }
 
-.img-center-dash{
-    padding-left: 5%;
-    padding-right: 5%;
+.img-item{
+    width: 450px;
+    height: 320px;
+    flex-shrink: 5;
+    margin: 3%;
 }
