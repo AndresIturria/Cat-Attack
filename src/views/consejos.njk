@@ -1,0 +1,42 @@
+{% extends "layoutNav.njk" %}
+
+{% block head %}
+    <title>Consejos</title>
+    <link rel="stylesheet" href="/stylesheets/consejos.css">
+{% endblock %}
+
+{% block nav %}
+    <li class="nav-item">
+        <a class="nav-link" href="/dashboard">Inicio<span class="sr-only"></span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/adopcion">Adopción</a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="#">Consejos</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/catsitting">Cat-Sitters</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/perfil">Mi Perfil</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+    </li>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="media">
+    <img class="media-object" src="/img/gatoconsejo.jpg" alt="Sample photo">
+    <div class="media-body">
+        <h3 class="media-heading">Consejo 1</h3>
+        <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
+</div>
+
+
+{% endblock %}
+
+{% block footer %} {% endblock %}

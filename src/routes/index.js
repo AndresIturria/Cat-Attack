@@ -41,4 +41,9 @@ function isAuthenticated(req, res, next) {
     res.redirect('/')
 }
 
+router.route('/consejos')
+    .get(isAuthenticated, function(req, res, next){
+        res.render('consejos.njk');
+    });
+
 module.exports = router;
