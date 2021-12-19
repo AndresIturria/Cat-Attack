@@ -43,7 +43,7 @@ function isAuthenticated(req, res, next) {
 
 router.route('/consejos')
     .get(isAuthenticated, function(req, res, next){
-        res.render('consejos.njk');
+        res.render('consejos.njk', {consejos});
     });
 
 module.exports = router;

@@ -28,15 +28,16 @@
 {% endblock %}
 
 {% block content %}
+{% for consejos in Consejos %}
 
 <div class="media">
-    <img class="media-object" src="/img/gatoconsejo.jpg" alt="Sample photo">
+    <img class="media-object" src="/img/consejo1.jpg" alt="Sample photo">
     <div class="media-body">
-        <h3 class="media-heading">Consejo 1</h3>
-        <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
+        <h3 class="media-heading">{{ consejos.title }}</h3>
+        <p> {{ consejos.description }}</p>
 </div>
 
-
+{% endfor %}
 {% endblock %}
 
 {% block footer %} {% endblock %}
