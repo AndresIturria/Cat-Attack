@@ -1,0 +1,35 @@
+#img-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#dash-header{
+    margin: 0 auto;
+    text-align: center;
+    padding: 3%;
+}
+
+.img-item{
+    width: 450px;
+    height: 320px;
+    flex-shrink: 5;
+    margin: 3%;
+}
+
+.media {
+    display: flex;
+    align-items: flex-start;
+    background: #F6F3EB;
+    padding: 5em;
+    border-radius: 3px;
+    max-width: 120em;
+}
+.media-object {
+    margin-right: 1em;
+}
+.media-body {
+    flex: 1;
+}
+.media-heading {
+    margin: 0 0 .5em;
+}
