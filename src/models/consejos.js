@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const { Schema } = mongoose;
 
+
 const consejosSchema = new Schema({
     photo: Array,
     title: String,
@@ -12,6 +13,7 @@ module.exports = mongoose.model('consejos', consejosSchema)
 
 var consejos = mongoose.model('consejos', consejosSchema);
 var query = consejos.find({});
+exports.consejos = consejos;
 
 query.exec(function (err) {
     if (err) return handleError(err);

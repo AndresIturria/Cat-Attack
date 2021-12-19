@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
+consejos = require('.../models/consejos');
 
 router.route('/')
     .get(function(req, res, next){
@@ -43,7 +44,7 @@ function isAuthenticated(req, res, next) {
 
 router.route('/consejos')
     .get(isAuthenticated, function(req, res, next){
-        res.render('consejos.njk', {consejos});
+        res.render('consejos.njk', {consejos: consejos});
     });
 
 module.exports = router;
