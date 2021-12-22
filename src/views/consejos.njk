@@ -28,16 +28,20 @@
 {% endblock %}
 
 {% block content %}
-{% for consejos in Consejos %}
 
-<div class="media">
-    <img class="media-object" src="/img/consejo1.jpg" alt="Sample photo">
-    <div class="media-body">
-        <h3 class="media-heading">{{ consejos.title }}</h3>
-        <p> {{ consejos.description }}</p>
-</div>
 
-{% endfor %}
+    {% if consejos|length < 1 %}
+        <h3>No hay consejos en estos momentos.</h3>
+    {% else %}
+        {% for consejo in consejos %}
+            <p>{{ consejo.title }}</p>
+
+        {% endfor %}
+
+
+    {% endif %}
+
+
 {% endblock %}
 
 {% block footer %} {% endblock %}

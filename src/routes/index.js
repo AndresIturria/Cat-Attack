@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
-consejos = require('.../models/consejos');
+const Consejo = require('../models/consejos');
+const {title} = require("nunjucks/src/filters");
 
 router.route('/')
     .get(function(req, res, next){
@@ -44,7 +45,12 @@ function isAuthenticated(req, res, next) {
 
 router.route('/consejos')
     .get(isAuthenticated, function(req, res, next){
-        res.render('consejos.njk', {consejos: consejos});
+        Consejo.find({}, function (err, consejos){
+            if (err) return console.log(err);
+            console.log(consejos)
+            res.render('consejos.njk', {consejos: consejos});
+        } )
+
     });
 
-module.exports = router;
+module.exports = router;A
