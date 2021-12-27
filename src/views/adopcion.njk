@@ -1,0 +1,55 @@
+{% extends "layoutNav.njk" %}
+
+{% block head %}
+    <title>Adopción</title>
+    <link rel="stylesheet" href="/stylesheets/adopcion.css">
+{% endblock %}
+
+{% block nav %}
+    <li class="nav-item">
+        <a class="nav-link" href="/dashboard">Inicio<span class="sr-only"></span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Adopción</a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="/consejos">Consejos</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/catsitting">Cat-Sitters</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/perfil">Mi Perfil</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+    </li>
+
+{% endblock %}
+
+{% block content %}
+
+
+    {% if adopciones|length < 1 %}
+        <h3>No hay gatos en adopción en estos momentos.</h3>
+    {% else %}
+        {% for adopcion in adopciones %}
+            <div class ="container">
+                <div class="consejos">
+                    <img class="photo" src="{{ adopcion.photo }}" alt="Sample photo">
+                    <div class="consejos-body">
+                        <h3 class="consejos-heading">{{ adopcion.name }}</h3>
+                        <div class="consejos-description">{{ adopcion.description }}</div>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+
+
+    {% endif %}
+
+
+{% endblock %}
+
+    {% block footer %} {% endblock %}

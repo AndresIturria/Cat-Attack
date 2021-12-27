@@ -1,0 +1,63 @@
+#img-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#dash-header{
+    margin: 0 auto;
+    text-align: center;
+    padding: 3%;
+}
+
+.img-item{
+    width: 450px;
+    height: 320px;
+    flex-shrink: 5;
+    margin: 3%;
+}
+.container {
+    display: grid;
+    gap: 20px 0;
+}
+
+.consejos {
+    display: grid;
+    align-items: flex-start;
+    background: #F6F3EB;
+    padding: 5em;
+    grid-template-areas:
+    ". photo info"
+    ". photo info"
+    ". photo info";
+    grid-area: consejo;
+}
+.photo {
+    margin-right: 10px;
+    margin-top: 0;
+    grid-template-areas:
+    ". . ."
+    ". . ."
+    ". . .";
+    grid-area: photo;
+    display: block;
+    max-width:400px;
+    max-height:400px;
+    width: auto;
+    height: auto;
+}
+.consejos-body {
+    display: grid;
+    grid-template-areas:
+    "title title title"
+    "description description description"
+    "description description description";
+    grid-area: info;
+}
+.consejos-heading {
+    grid-area: title;
+
+}
+
+.consejos-description {
+    grid-area: description;
+}
