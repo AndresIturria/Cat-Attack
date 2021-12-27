@@ -31,17 +31,25 @@
 
 
     {% if consejos|length < 1 %}
-        <h3>No hay consejos en estos momentos.</h3>
-    {% else %}
+    <h3>No hay consejos en estos momentos.</h3>
+{% else %}
         {% for consejo in consejos %}
-            <p>{{ consejo.title }}</p>
+<div class ="container">
+    <div class="consejos">
+        <img class="photo" src="{{ consejo.photo }}" alt="Sample photo">
+        <div class="consejos-body">
+            <h3 class="consejos-heading">{{ consejo.title }}</h3>
+            <div class="consejos-description">{{ consejo.description }}</div>
+        </div>
+    </div>
+</div>
 
-        {% endfor %}
+    {% endfor %}
 
 
     {% endif %}
 
 
-{% endblock %}
+    {% endblock %}
 
-{% block footer %} {% endblock %}
+    {% block footer %} {% endblock %}

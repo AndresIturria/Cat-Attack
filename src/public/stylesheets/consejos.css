@@ -15,21 +15,49 @@
     flex-shrink: 5;
     margin: 3%;
 }
+.container {
+    display: grid;
+    gap: 20px 0;
+}
 
-.media {
-    display: flex;
+.consejos {
+    display: grid;
     align-items: flex-start;
     background: #F6F3EB;
     padding: 5em;
-    border-radius: 3px;
-    max-width: 120em;
+    grid-template-areas:
+    ". photo info"
+    ". photo info"
+    ". photo info";
+    grid-area: consejo;
 }
-.media-object {
-    margin-right: 1em;
+.photo {
+    margin-right: 10px;
+    margin-top: 0;
+    grid-template-areas:
+    ". . ."
+    ". . ."
+    ". . .";
+    grid-area: photo;
+    display: block;
+    max-width:400px;
+    max-height:400px;
+    width: auto;
+    height: auto;
 }
-.media-body {
-    flex: 1;
+.consejos-body {
+    display: grid;
+    grid-template-areas:
+    "title title title"
+    "description description description"
+    "description description description";
+    grid-area: info;
 }
-.media-heading {
-    margin: 0 0 .5em;
+.consejos-heading {
+    grid-area: title;
+
+}
+
+.consejos-description {
+    grid-area: description;
 }
