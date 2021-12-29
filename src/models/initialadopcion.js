@@ -12,17 +12,35 @@ async function initDB() {
         {
             photo: "/img/adopcion1.jpg",
             name: "Percy",
-            description: "Gato común europeo blanco, muy cariñoso. Tiene 1 año."
+            age: "2 años",
+            sex: "Macho",
+            neutered: "Sí",
+            breed: "Común europeo",
+            fur: "Blanco con un poco de marrón claro",
+            eyes: "Azules",
+            description: "Es muy cariñoso y tranquilo, me mudo y necesito encontrarle un hogar."
         },
         {
             photo: "/img/adopcion2.jpg",
             name: "Koda",
-            description: "Gatito de 1 mes, juguetón y curioso."
+            age: "1 año",
+            sex: "Macho",
+            neutered: "No",
+            breed: "Desconocida",
+            fur: "Naranja",
+            eyes: "Miel",
+            description: "Es súper juguetón y curioso. Le encanta comer!! El paté sobretodo lo adora."
         },
         {
             photo: "/img/adopcion3.png",
-            name: "Toothless",
-            description: "Gato de 2 años, muy familiar y tranquilo."
+            name: "Boo",
+            age: "4 años",
+            sex: "Hembra",
+            neutered: "No",
+            breed: "Ragdoll",
+            fur: "Negro",
+            eyes: "Verdes",
+            description: "Es muy familiar, se porta buenísimo. Le gustan mucho los mimos."
         }
     ];
 

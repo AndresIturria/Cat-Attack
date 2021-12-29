@@ -34,12 +34,21 @@
         <h3>No hay gatos en adopción en estos momentos.</h3>
     {% else %}
         {% for adopcion in adopciones %}
-            <div class ="container">
-                <div class="consejos">
+            <div class="container">
+                <div class="adopcion">
                     <img class="photo" src="{{ adopcion.photo }}" alt="Sample photo">
-                    <div class="consejos-body">
-                        <h3 class="consejos-heading">{{ adopcion.name }}</h3>
-                        <div class="consejos-description">{{ adopcion.description }}</div>
+                    <div class="adopcion-body">
+                        <h3 class="adopcion-heading">{{ adopcion.name }}</h3>
+                        <div class="adopcion-description">
+                            <br>Edad: {{ adopcion.age }}
+                            <br>Sexo: {{ adopcion.gender }}
+                            <br>Esterilizado: {{ adopcion.neutered }}
+                            <br>Raza: {{ adopcion.breed }}
+                            <br>Color del pelaje: {{ adopcion.fur }}
+                            <br>Color de ojos: {{ adopcion.eyes }}
+                            <br>Detalles: {{ adopcion.description }}
+
+                        </div>
                     </div>
                 </div>
             </div>

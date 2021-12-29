@@ -17,47 +17,43 @@
 }
 .container {
     display: grid;
-    gap: 20px 0;
+    gap: 20px;
 }
 
-.consejos {
+.adopcion {
     display: grid;
     align-items: flex-start;
     background: #F6F3EB;
-    padding: 5em;
+    padding: 3em;
     grid-template-areas:
-    ". photo info"
-    ". photo info"
-    ". photo info";
-    grid-area: consejo;
+    "photo info info"
+    "photo info info"
+    "photo info info";
+    grid-area: adopcion;
 }
+
 .photo {
-    margin-right: 10px;
+    margin-right: 1px;
     margin-top: 0;
-    grid-template-areas:
-    ". . ."
-    ". . ."
-    ". . .";
     grid-area: photo;
     display: block;
-    max-width:400px;
-    max-height:400px;
-    width: auto;
-    height: auto;
+    width: 450px;
+    height: 320px;
 }
-.consejos-body {
+
+.adopcion-body {
     display: grid;
     grid-template-areas:
-    "title title title"
+    ". title ."
     "description description description"
     "description description description";
     grid-area: info;
 }
-.consejos-heading {
+.adopcion-heading {
     grid-area: title;
 
 }
 
-.consejos-description {
+.adopcion-description {
     grid-area: description;
 }
