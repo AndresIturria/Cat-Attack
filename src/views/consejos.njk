@@ -34,15 +34,17 @@
     <h3>No hay consejos en estos momentos.</h3>
 {% else %}
         {% for consejo in consejos %}
-<div class ="container">
-    <div class="consejos">
-        <img class="photo" src="{{ consejo.photo }}" alt="Sample photo">
-        <div class="consejos-body">
-            <h3 class="consejos-heading">{{ consejo.title }}</h3>
-            <div class="consejos-description">{{ consejo.description }}</div>
-        </div>
-    </div>
-</div>
+
+            <div class ="container">
+                <div class="consejos">
+                    <img class="photo" src="{{ consejo.photo }}" alt="Sample photo">
+                    <div class="consejos-body">
+                        <h3 class="consejos-heading">{{ consejo.title }}</h3>
+                        <div class="consejos-description">{{ consejo.description }}</div>
+                        <a href="/consejos/{{ consejo._id }}"> Abrir consejo </a>
+                    </div>
+                </div>
+            </div>
 
     {% endfor %}
 

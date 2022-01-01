@@ -1,0 +1,33 @@
+{% extends "layoutNav.njk" %}
+
+{% block head %}
+    <title>Consejos</title>
+    <link rel="stylesheet" href="/stylesheets/consejo_detailed.css">
+{% endblock %}
+
+{% block nav %}
+    <li class="nav-item">
+        <a class="nav-link" href="/dashboard">Inicio<span class="sr-only"></span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/adopcion">Adopción</a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="/consejos">Consejos</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/catsitting">Cat-Sitters</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/perfil">Mi Perfil</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+    </li>
+
+{% endblock %}
+
+{% block content %}
+    <h1>{{ consejo.title }}</h1>
+    <p>{{ consejo.description }}</p>
+{% endblock %}

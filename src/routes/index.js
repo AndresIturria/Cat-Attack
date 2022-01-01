@@ -48,11 +48,20 @@ router.route('/consejos')
     .get(isAuthenticated, function(req, res, next){
         Consejo.find({}, function (err, consejos){
             if (err) return console.log(err);
-            console.log(consejos)
             res.render('consejos.njk', {consejos: consejos});
         } )
 
     });
+
+router.route('/consejos/:id')
+    .get(isAuthenticated, function(req, res, next){
+        Consejo.findById(req.params.id, function (err, consejo){
+            if (err) return console.log(err);
+            res.render('consejo_detailed.njk', {consejo: consejo});
+        } )
+
+    });
+
 
 router.route('/adopcion')
     .get(isAuthenticated, function(req, res, next){
