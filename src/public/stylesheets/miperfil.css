@@ -1,0 +1,21 @@
+.container {
+    background: #F6F3EB;
+    width: 80%;
+    margin-top: 3%;
+
+}
+.title {
+    text-align: center;
+    padding: 2%;
+}
+.profile-pic {
+    padding: 3%;
+}
+.buttons {
+    text-align: center;
+    padding: 3%;
+}
+.profile-description{
+    padding: 3%;
+    margin-left: 5%;
+}

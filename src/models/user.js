@@ -11,6 +11,8 @@ const userSchema = new Schema({
     dni: String,
     birthday: Date,
     email: String,
+    photo: Array,
+    description: String,
     isAdmin: Boolean
 });
 
