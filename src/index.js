@@ -15,7 +15,6 @@ const consejosRouter = require("./routes/consejos")
 const app = express();
 
 //settings
-app.set('port',process.env.port || 9000);
 app.engine( 'html', nunjucks.render) ;
 app.set( 'view engine', 'html');
 
