@@ -28,6 +28,13 @@
 {% endblock %}
 
 {% block content %}
-    <h1>{{ consejo.title }}</h1>
-    <p>{{ consejo.description }}</p>
+
+    <div class="container">
+        <h3 class="title">{{ consejo.title }}</h3>
+        <img class="photo" src="{{ consejo.photo }}" alt="Sample photo">
+        <div class="info">{{ consejo.article }}
+            <a class="btn btn-primary" href="/consejos">Volver</a>
+        </div>
+    </div>
+
 {% endblock %}
