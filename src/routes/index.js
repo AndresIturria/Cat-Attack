@@ -1,9 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
-const Consejo = require('../models/consejos');
-const Adopcion = require('../models/adopcion');
-const {title} = require("nunjucks/src/filters");
 
 router.route('/')
     .get(function(req, res, next){
@@ -15,61 +12,4 @@ router.route('/')
         passReqToCallback: true
     }));
 
-router.route('/registrarse')
-    .get(function(req, res, next){
-        res.render('registrarse.njk')
-    })
-    .post(passport.authenticate('local-signup', {
-        successRedirect: '/',
-        failureRedirect: '/registrarse',
-        passReqToCallback: true
-    }));
-
-router.route('/logout')
-    .get(function(req, res, next){
-        req.logout();
-        res.redirect('/');
-})
-
-
- router.route('/dashboard')
-    .get(isAuthenticated, function(req, res, next){
-        res.render('dashboard.njk');
-    });
-
-function isAuthenticated(req, res, next) {
-    if(req.isAuthenticated()) {
-        return next();
-    }
-    res.redirect('/')
-}
-
-router.route('/consejos')
-    .get(isAuthenticated, function(req, res, next){
-        Consejo.find({}, function (err, consejos){
-            if (err) return console.log(err);
-            res.render('consejos.njk', {consejos: consejos});
-        } )
-
-    });
-
-router.route('/consejos/:id')
-    .get(isAuthenticated, function(req, res, next){
-        Consejo.findById(req.params.id, function (err, consejo){
-            if (err) return console.log(err);
-            res.render('consejo_detailed.njk', {consejo: consejo});
-        } )
-
-    });
-
-
-router.route('/adopcion')
-    .get(isAuthenticated, function(req, res, next){
-        Adopcion.find({}, function (err, adopciones){
-            if (err) return console.log(err);
-            console.log(adopciones)
-            res.render('adopcion.njk', {adopciones: adopciones});
-        } )
-
-    });
 module.exports = router;

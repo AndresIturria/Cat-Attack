@@ -5,10 +5,13 @@ const morgan = require('morgan');
 const passport = require('passport');
 const session = require('express-session');
 const flash = require('connect-flash');
+const createError = require("http-errors");
 
 //Initializations
 require('./database');
 require('./passport/local-auth');
+const consejosRouter = require("./routes/consejos")
+
 const app = express();
 
 //settings
@@ -45,6 +48,11 @@ app.use((req, res, next) => { //Esto es un Middleware propio para poder acceder 
 
 //Routes
 app.use('/', require('./routes/index'));
+app.use('/registrarse', require('./routes/registrarse'));
+app.use('/logout', isAuthenticated, require('./routes/logout'));
+app.use('/dashboard', isAuthenticated, require('./routes/dashboard'));
+app.use('/adopcion', isAuthenticated, require('./routes/adopcion'));
+app.use('/consejos', isAuthenticated, require('./routes/consejos'));
 
 
 // catch 404 and forward to error handler
@@ -62,5 +70,14 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error.njk');
 });
+
+// Authentication
+
+function isAuthenticated(req, res, next) {
+    if(req.isAuthenticated()) {
+        return next();
+    }
+    res.redirect('/')
+}
 
 module.exports = app;
