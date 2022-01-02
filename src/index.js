@@ -10,7 +10,6 @@ const createError = require("http-errors");
 //Initializations
 require('./database');
 require('./passport/local-auth');
-const consejosRouter = require("./routes/consejos")
 
 const app = express();
 
