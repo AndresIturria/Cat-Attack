@@ -18,6 +18,7 @@ async function initDB() {
             lastName2: "admin",
             email: "admin@catattack.com",
             birthday: new Date("<2000-01-01>"),
+            description: "This is the admin account",
             isAdmin: "true"
         },
         {
@@ -28,6 +29,7 @@ async function initDB() {
             lastName2: "guest",
             email: "guest@catattack.com",
             birthday: new Date("<2000-01-01>"),
+            description: "This is the guest account",
             isAdmin: "false"
         },
         {
@@ -38,6 +40,7 @@ async function initDB() {
             lastName2: "test",
             email: "test@catattack.com",
             birthday: new Date("<2000-01-01>"),
+            description: "This is a test account",
             isAdmin: "false"
         }
     ];

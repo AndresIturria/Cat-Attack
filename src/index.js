@@ -51,7 +51,7 @@ app.use('/logout', isAuthenticated, require('./routes/logout'));
 app.use('/dashboard', isAuthenticated, require('./routes/dashboard'));
 app.use('/adopcion', isAuthenticated, require('./routes/adopcion'));
 app.use('/consejos', isAuthenticated, require('./routes/consejos'));
-
+app.use('/miperfil', isAuthenticated, require('./routes/miperfil'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
