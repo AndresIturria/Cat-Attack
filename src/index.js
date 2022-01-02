@@ -73,7 +73,7 @@ app.use(function(err, req, res, next) {
 // Authentication
 
 function isAuthenticated(req, res, next) {
-    if(req.isAuthenticated()) {
+    if(req.isAuthenticated()) { // req.isAuthenticated is a function provided by passport.
         return next();
     }
     res.redirect('/')
