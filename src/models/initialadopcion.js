@@ -16,9 +16,7 @@ async function initDB() {
             sex: "Macho",
             neutered: "Sí",
             breed: "Común europeo",
-            fur: "Blanco con un poco de marrón claro",
-            eyes: "Azules",
-            description: "Es muy cariñoso y tranquilo, me mudo y necesito encontrarle un hogar."
+            weight: "3kg-6kg",
         },
         {
             photo: "/img/adopcion2.jpg",
@@ -27,9 +25,7 @@ async function initDB() {
             sex: "Macho",
             neutered: "No",
             breed: "Desconocida",
-            fur: "Naranja",
-            eyes: "Miel",
-            description: "Es súper juguetón y curioso. Le encanta comer!! El paté sobretodo lo adora."
+            weight: "3kg-6kg",
         },
         {
             photo: "/img/adopcion3.png",
@@ -38,9 +34,7 @@ async function initDB() {
             sex: "Hembra",
             neutered: "No",
             breed: "Ragdoll",
-            fur: "Negro",
-            eyes: "Verdes",
-            description: "Es muy familiar, se porta buenísimo. Le gustan mucho los mimos."
+            weight: "6kg+",
         }
     ];
 
