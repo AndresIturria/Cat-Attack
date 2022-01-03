@@ -1,5 +1,6 @@
 const passport = require(`passport`);
 const LocalStrategy = require('passport-local').Strategy;
+var formidable = require('formidable');
 
 User = require('../models/user')
 
@@ -34,8 +35,14 @@ passport.use('local-signup', new LocalStrategy({
         newUser.email = req.body.email;
         newUser.birthday = Date();
         newUser.isAdmin = "false";
+        newUser.photo = username + ".jpg"
         await newUser.save();
         done(null, newUser);
+
+        //upload.single("upload" /* name attribute of <file> element in your form */),
+        //    (req, res) => {
+        //        const tempPath = req.upload.path;
+        //        const targetPath = path.join(__dirname, "./uploads/image.png");
 
     }
 }));
