@@ -1,0 +1,59 @@
+{% extends "layoutNav.njk" %}
+
+{% block head %}
+    <title>Cat-Sitters</title>
+    <link rel="stylesheet" href="/stylesheets/catsitting.css">
+{% endblock %}
+
+{% block nav %}
+    <li class="nav-item">
+        <a class="nav-link" href="/dashboard">Inicio<span class="sr-only"></span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/adopcion">Adopción</a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="/consejos">Consejos</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Cat-Sitters</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/miperfil">Mi Perfil</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+    </li>
+
+{% endblock %}
+
+{% block content %}
+    <a class="btn btn-outline-dark" href="/catsitting_form">Ofrecerse como Cat-Sitter</a>
+
+    {% if catsitters|length < 1 %}
+        <h3>No hay cat-sitters en estos momentos.</h3>
+    {% else %}
+        {% for catsitter in catsitters %}
+            <div class="container">
+                <div class="catsitter">
+                    <img class="photo" src="{{ catsitter.photo }}" alt="Sample photo">
+                    <div class="catsitter-body">
+                        <h3 class="catsitter-heading">{{ catsitter.name }}</h3>
+                        <div class="catsitter-description">
+                            <br><b>Alojamiento:</b> {{ catsitter.place }}
+                            <br><b>Precio:</b> {{ catsitter.price }} euros por noche
+                            <br><b>Sobre mi:</b> {{ catsitter.description }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+
+
+    {% endif %}
+
+
+{% endblock %}
+
+    {% block footer %} {% endblock %}

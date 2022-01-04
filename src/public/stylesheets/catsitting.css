@@ -1,0 +1,55 @@
+.container {
+    width: 80%;
+    padding: 1%;
+}
+
+.catsitter {
+    display: grid;
+    align-items: flex-start;
+    background: #F6F3EB;
+    padding: 3em;
+    grid-template-areas:
+    "photo info info"
+    "photo info info"
+    "photo info info";
+    grid-area: catsitter;
+}
+
+.photo {
+    margin-right: 1px;
+    margin-top: 0;
+    grid-area: photo;
+    display: block;
+    width: 450px;
+    height: 320px;
+}
+
+.catsitter-body {
+    display: grid;
+    grid-template-areas:
+    ". title ."
+    "description description description"
+    "description description description";
+    grid-area: info;
+}
+.catsitter-heading {
+    grid-area: title;
+    font-size: 60px;
+    color: cadetblue;
+}
+
+.catsitter-description {
+    grid-area: description;
+    text-align-all: center;
+    font-size: 20px;
+    padding-left: 10px;
+
+}
+
+.btn {
+    margin-left: 1260px;
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+}

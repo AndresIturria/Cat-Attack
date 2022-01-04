@@ -1,0 +1,73 @@
+{% extends "layout.njk" %}
+
+
+{% block head %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Formulario de Adopción</title>
+    <link rel="stylesheet" href="/stylesheets/catsitting_form.css">
+
+{% endblock %}
+
+{% block header %}
+    <div class="registrarse-header">
+        <h2 class="h2-title" style="text-align:center"> ¡Conviértete en Cat-Sitter! </h2>
+    </div>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+    <div class="container">
+        <div class="signup">
+            <img id="catsitting-photo" src="/img/catsitting-form.png" alt="Sample photo">
+            <p class="photo-desc"> Haz click en la imagen para adjuntar una foto. ¡Te recomendamos publicar una foto con un gato! Darás más confianza.</p>
+            <div class="signup-form">
+                <form class="catsittingform" method="POST" action="/catsitting_form" id="catsitting_form" encType="multipart/form-data">
+
+                    <label for="name">Nombre:</label>
+                    <input name="name" type="text" placeholder="Introduce tu nombre" maxlength="15" class="form-control" id="name" required="required"/><br />
+
+                    <label for="description">¡Háblanos sobre tí!:</label>
+                    <input name="description" type="text" placeholder="¿Por qué deberían escogerte? ¡Cuénta tus experiencias!" maxlength="100" class="form-control" id="description" required="required"/><br />
+
+                    <label for="place">¿En dónde podrás cuidar del gato?</label>
+                    <select name="place" id="place" class="form-control selectpicker" required="required">
+                        <option value="">Indica tu preferencia</option>
+                        <option>En casa del propietario</option>
+                        <option>En casa del cuidador</option>
+                    </select> <br />
+
+                    <label for="price">Precio:</label>
+                    <input name="price" type="number" placeholder="Recuerda que es un coste diario" min="0" class="form-control" id="price" required="required"/><br />
+
+                    <input type="file" name="fotocatsitting" id="upload" required="required">
+
+                    <br />
+
+                    <input type="submit" class="btn btn-primary" value="Enviar">
+                    <a class="btn btn-primary" href="/catsitting">Volver</a>
+
+
+                    <br />
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="h2-blank"> </h2>
+
+{% endblock %}
+{% block footer %}
+
+    <script type="text/javascript">
+
+        $("#catsitting-photo").click(function(e) {
+            $("#upload").click();
+        });
+
+    </script>
+{% endblock %}

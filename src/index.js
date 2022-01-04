@@ -55,6 +55,8 @@ app.use('/adopcion', isAuthenticated, require('./routes/adopcion'));
 app.use('/consejos', isAuthenticated, require('./routes/consejos'));
 app.use('/miperfil', isAuthenticated, require('./routes/miperfil'));
 app.use('/adopt_form', isAuthenticated, require('./routes/adopt_form'));
+app.use('/catsitting', isAuthenticated, require('./routes/catsitting'));
+app.use('/catsitting_form', isAuthenticated, require('./routes/catsitting_form'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
