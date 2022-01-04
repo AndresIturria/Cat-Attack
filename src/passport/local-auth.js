@@ -1,6 +1,7 @@
 const passport = require(`passport`);
 const LocalStrategy = require('passport-local').Strategy;
-var formidable = require('formidable');
+const fs = require('fs');
+const path = require('path')
 
 User = require('../models/user')
 
@@ -25,6 +26,12 @@ passport.use('local-signup', new LocalStrategy({
     if(existCheck){ //si existe el username manda un error
         return done(null, false, req.flash('signupMessage','Username is taken.'));
     } else{ //Si no existe continuamos
+        let profilepic = req.files.profilepic;
+        let uploadPath = process.cwd() + "/public/img/" + req.body.userName + ".jpg";
+
+        profilepic.mv(uploadPath, function (err){
+            if (err) console.log(err)
+        });
 
         const newUser = new User();
         newUser.username = username
@@ -38,6 +45,8 @@ passport.use('local-signup', new LocalStrategy({
         newUser.photo = username + ".jpg"
         await newUser.save();
         done(null, newUser);
+
+
 
         //upload.single("upload" /* name attribute of <file> element in your form */),
         //    (req, res) => {

@@ -29,7 +29,7 @@
     <img id="profile-pic" src="/img/gatomaleta.jpg" alt="Sample photo">
     <p class="photo-desc"> Haz click en la imagen para cambiar tu foto de perfil. </p>
     <div class="signup-form">
-      <form id="registro" method="POST" action="/registrarse" style="text-align:center" enctype = "multipart / form-data">
+      <form id="registro" method="POST" action="/registrarse" style="text-align:center" encType="multipart/form-data">
 
         <label for="firstName">Nombre:</label>
         <input name="firstName" type="text"  class="form-control" id="firstName" required="required"/><br />
@@ -58,7 +58,7 @@
         <label for="passwordConfirmation">Confirmar contraseña:</label>
         <input name="passwordConfirmation" type="password"  class="form-control" id="passwordConfirmation" oninput="check(this)" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/><br/>
 
-        <input type="file" name="upload" id="upload">
+        <input type="file" name="profilepic" id="upload" required="required">
 
         <br />
 

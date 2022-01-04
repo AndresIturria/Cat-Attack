@@ -6,6 +6,7 @@ const passport = require('passport');
 const session = require('express-session');
 const flash = require('connect-flash');
 const createError = require("http-errors");
+const fileUpload = require('express-fileupload');
 
 //Initializations
 require('./database');
@@ -34,6 +35,7 @@ app.use(session({
     saveUninitialized: false
 }));
 app.use(flash());
+app.use(fileUpload());
 app.use(passport.initialize());
 app.use(passport.session());
 app.use((req, res, next) => { //Esto es un Middleware propio para poder acceder al mensaje de signup en la vista de registrarse.
