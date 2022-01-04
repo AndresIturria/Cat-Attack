@@ -1,89 +1,109 @@
+{% extends "layout.njk" %}
+
+
 {% block head %}
-    <title>Formulario</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Formulario de Adopción</title>
     <link rel="stylesheet" href="/stylesheets/adopt_form.css">
+
 {% endblock %}
+
+{% block header %}
+    <div class="registrarse-header">
+        <h2 class="h2-title" style="text-align:center"> ¡Le encontramos un hogar a tu gato! </h2>
+    </div>
+
+{% endblock %}
+
 
 {% block content %}
 
-    <form class="adoptform" method="post" action="/post-adopt" id="adopt_form">
-        <div class='signup-container'>
-            <div class='left-container'>
-                <h1>
-                    CAT-ATTACK!
-                </h1>
-                <div class='cat'>
-                    <img src="/img/cat-form.png">
-                </div>
-            </div>
-            <div class='right-container'>
-                <header>
-                    <h1>¡Te ayudamos a encontrarle un hogar!</h1>
-                    <div class='set'>
-                        <div class='name'>
-                            <label for='name'>Nombre</label>
-                            <input id='name' placeholder="Nombre del gato" type='text'>
-                        </div>
-                        <div class='photo'>
-                            <button id='pets-upload'>
-                                <i class='fas fa-camera-retro'></i>
-                            </button>
-                            <label for='pets-upload'>Sube una foto</label>
-                        </div>
-                    </div>
-                    <div class='set'>
-                        <div class='breed'>
-                            <label for='breed'>Raza</label>
-                            <input id='breed' placeholder="Raza del gato" type='text'>
-                        </div>
-                        <div class='age'>
-                            <label for='age'>Edad</label>
-                            <input id='age' placeholder='Introduce su edad' type='text'>
-                        </div>
-                    </div>
-                    <div class='set'>
-                        <div class='sex'>
-                            <label for='sex-female'>Sexo</label>
-                            <div class='radio-container'>
-                                <input checked='' id='sex-female' name='sex' type='radio' value='female'>
-                                <label for='sex-female'>Hembra</label>
-                                <input id='sex-male' name='sex' type='radio' value='male'>
-                                <label for='sex-male'>Macho</label>
-                            </div>
-                        </div>
-                        <div class='neutered'>
-                            <label for='neutered'>Esterilizado</label>
-                            <div class='radio-container'>
-                                <input checked='' id='yesneutered' name='yesneutered' type='radio' value='yesneutered'>
-                                <label for='yesneutered'>Sí</label>
-                                <input id='notneutered' name='notneutered' type='radio' value='notneutered'>
-                                <label for='notneutered'>No</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='weight'>
-                        <label for='weight-0-1'>Peso</label>
-                        <div class='radio-container'>
-                            <input checked='' id='weight-0-1' name='weight' type='radio' value='0-1'>
-                            <label for='weight-0-1'>0-1kg</label>
-                            <input id='weight-1-3' name='weight' type='radio' value='1-3'>
-                            <label for='weight-1-3'>1kg-3kg</label>
-                            <input id='weight-3-6' name='weight' type='radio' value='3-6'>
-                            <label for='weight-3-6'>3kg-6kg</label>
-                            <input id='weight-6-plus' name='weight' type='radio' value='6+'>
-                            <label for='weight-6-plus'>6kg+</label>
-                        </div>
-                    </div>
-                </header>
-                <footer>
-                    <div class='set'>
-                        <a class="btn btn-primary" href="/adopcion">Volver</a>
-                        <input type="submit" value="Submit">
-                    </div>
-                </footer>
+
+    <div class="container">
+        <div class="signup">
+            <img id="adopt-photo" src="/img/cat-form.png" alt="Sample photo">
+            <p class="photo-desc"> Haz click en la imagen para adjuntar una foto del gato. </p>
+            <div class="signup-form">
+                <form class="adoptform" method="POST" action="/adopt_form" id="adopt_form" encType="multipart/form-data">
+
+                    <label for="name">Nombre:</label>
+                    <input name="name" type="text" placeholder="Introduce el nombre de tu gato" maxlength="15" class="form-control" id="name" required="required"/><br />
+
+                    <label for="sex">Sexo:</label>
+                    <select name="sex" id="sex" class="form-control selectpicker" required="required">
+                        <option value="">Selecciona el sexo</option>
+                        <option>Hembra</option>
+                        <option>Macho</option>
+                        <option value="Desconocido" selected>Desconocido</option>
+                    </select><br />
+
+
+                    <label for="breed">Raza:</label>
+                    <select name="breed" id="breed" class="form-control selectpicker" required="required">
+                        <option value="">Escoge una raza</option>
+                        <option>Bengalí</option>
+                        <option>British Shorthair</option>
+                        <option>Bosque de Noruega</option>
+                        <option>Común europeo</option>
+                        <option>Curl Americano</option>
+                        <option>Esfinge</option>
+                        <option>Himalayo</option>
+                        <option>Maine Coon</option>
+                        <option>Munchkin</option>
+                        <option value="Persa" selected>Persa</option>
+                        <option>Ragamuffin</option>
+                        <option>Ragdoll</option>
+                        <option>Siamés</option>
+                        <option>Siberiano</option>
+                        <option>Desconocido/No Listado</option>
+                    </select> <br />
+
+                    <label for="age">Edad:</label>
+                    <input name="age" type="text" placeholder="Ejemplo: 5 meses, 3 años..." class="form-control" id="age" required="required"/><br />
+
+                    <label for="neutered">¿Esterilizado?</label>
+                    <select name="neutered" id="neutered" class="form-control selectpicker" required="required">
+                        <option value="">Indica si el gato ha sido esterilizado</option>
+                        <option>Sí</option>
+                        <option>No</option>
+                        <option value="Desconocido" selected>Desconocido</option>
+                    </select> <br />
+
+                    <label for="weight">Peso:</label>
+                    <select name="weight" id="weight" class="form-control selectpicker" required="required">
+                        <option value="">Selecciona el paso aproximado</option>
+                        <option>0-3kg</option>
+                        <option>3-6kg</option>
+                        <option>+6kg</option>
+                        <option value="Desconocido" selected>Desconocido</option>
+                    </select> <br /><br />
+
+                    <input type="file" name="fotogato" id="upload" required="required">
+
+                    <br />
+
+                    <input type="submit" class="btn btn-primary" value="Enviar">
+                    <a class="btn btn-primary" href="/adopcion">Volver</a>
+
+
+                    <br />
+
+                </form>
             </div>
         </div>
-    </form>
+    </div>
+
+    <h2 class="h2-blank"> </h2>
 
 {% endblock %}
+{% block footer %}
 
-    {% block footer %} {% endblock %}
+    <script type="text/javascript">
+
+        $("#adopt-photo").click(function(e) {
+            $("#upload").click();
+        });
+
+    </script>
+{% endblock %}

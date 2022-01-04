@@ -28,7 +28,7 @@
 {% endblock %}
 
 {% block content %}
-    <a href="/adopt_form"> Poner un gato en adopción </a>
+    <a class="btn btn-outline-dark" href="/adopt_form">Poner un gato en adopción</a>
 
     {% if adopciones|length < 1 %}
         <h3>No hay gatos en adopción en estos momentos.</h3>
@@ -40,11 +40,11 @@
                     <div class="adopcion-body">
                         <h3 class="adopcion-heading">{{ adopcion.name }}</h3>
                         <div class="adopcion-description">
-                            <br>Edad: {{ adopcion.age }}
-                            <br>Sexo: {{ adopcion.sex }}
-                            <br>Esterilizado: {{ adopcion.neutered }}
-                            <br>Raza: {{ adopcion.breed }}
-                            <br>Peso: {{ adopcion.weight }}
+                            <br><b>Edad:</b> {{ adopcion.age }}
+                            <br><b>Sexo:</b> {{ adopcion.sex }}
+                            <br><b>Esterilizado:</b> {{ adopcion.neutered }}
+                            <br><b>Raza:</b> {{ adopcion.breed }}
+                            <br><b>Peso:</b> {{ adopcion.weight }}
                         </div>
                     </div>
                 </div>

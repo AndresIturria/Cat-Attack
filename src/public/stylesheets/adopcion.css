@@ -34,9 +34,21 @@
 }
 .adopcion-heading {
     grid-area: title;
+    font-size: 60px;
+    color: cadetblue;
 }
 
 .adopcion-description {
     grid-area: description;
-    padding-left: 10px;
+    text-align-all: center;
+    font-size: 20px;
+
+}
+
+.btn {
+    margin-left: 1260px;
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+
 }

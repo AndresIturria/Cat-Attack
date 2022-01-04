@@ -10,6 +10,7 @@ const adopcionSchema = new Schema({
     neutered: String,
     breed: String,
     weight: String,
+    ownerid: Schema.Types.ObjectId,
 });
 
 module.exports = mongoose.model('adopcion', adopcionSchema)

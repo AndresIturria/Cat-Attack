@@ -7,7 +7,6 @@ router.route('/')
     .get(function(req, res, next){
         Adopcion.find({}, function (err, adopciones){
             if (err) return console.log(err);
-            console.log(adopciones)
             res.render('adopcion.njk', {adopciones: adopciones});
         } )
 
