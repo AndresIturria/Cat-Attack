@@ -21,7 +21,9 @@
     text-align: center;
 }
 
-.profile-photo { grid-area: profile-photo; }
+.profile-photo {
+    grid-area: profile-photo;
+}
 
 .profile-info {
     display: grid;
