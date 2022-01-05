@@ -17,6 +17,7 @@ async function initDB() {
             neutered: "Sí",
             breed: "Común europeo",
             weight: "3kg-6kg",
+            ownerid: "61ae2d59f0adeead500acd14",
         },
         {
             photo: "/img/adopcion2.jpg",
@@ -26,6 +27,7 @@ async function initDB() {
             neutered: "No",
             breed: "Desconocida",
             weight: "3kg-6kg",
+            ownerid: "61ae2d59f0adeead500acd14",
         },
         {
             photo: "/img/adopcion3.png",
@@ -35,6 +37,7 @@ async function initDB() {
             neutered: "No",
             breed: "Ragdoll",
             weight: "6kg+",
+            ownerid: "61ae2d59f0adeead500acd14",
         }
     ];
 

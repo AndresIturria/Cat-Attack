@@ -13,7 +13,7 @@ async function initDB() {
             photo: "/img/catsitter1.png",
             name: "Sofía",
             place: "En casa del cuidador",
-            price: "18 euros por noche",
+            price: "18",
             description: "¡No tengo gatos pero me encantan! Llevo unos 2 años cuidando gatos en mi tiempo libre.",
 
         },
@@ -21,14 +21,14 @@ async function initDB() {
             photo: "/img/catsitter2.png",
             name: "Ignacio",
             place: "En casa del propietario",
-            price: "15 euros por noche",
+            price: "15",
             description: "Amo a los animales, como pueden ver en mi foto, ¡tengo unos cuantos gatitos ya!",
         },
         {
             photo: "/img/catsitter3.png",
             name: "Camila",
             place: "En casa del propietario",
-            price: "17 euros por noche",
+            price: "17",
             description: "Toda mi vida he vivido con animales. En casa tengo 5 perros y 2 gatos (por eso prefiero ir a casa del propietario!). Cuidaré de tus gatos" +
                 "como si fueran los mios.",
         }
