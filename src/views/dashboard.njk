@@ -25,11 +25,15 @@
         <a class="nav-link" href="/logout">Logout</a>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link" style="color: #FF0000" href="/incidencias">Incidencias</a>
+    </li>
+
 {% endblock %}
 
 {% block header %}
     <div id="dash-header">
-        <h1> Bienvenido a Cat-Attack {{ user.firstName }}</h1>
+        <h1> Bienvenido a Cat-Attack, {{ user.firstName }} </h1>
     </div>
 {% endblock %}
 

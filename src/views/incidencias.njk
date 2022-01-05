@@ -1,0 +1,35 @@
+{% extends "layoutNav.njk" %}
+
+{% block head %}
+    <title>Incidencias</title>
+    <link rel="stylesheet" href="/stylesheets/incidencias.css">
+{% endblock %}
+
+{% block nav %}
+    <li class="nav-item">
+        <a class="nav-link" href="/dashboard">Inicio<span class="sr-only"></span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/adopcion">Adopción</a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="/consejos">Consejos</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/catsitting">Cat-Sitters</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/miperfil">Mi Perfil</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" style="color: #FF0000" href="#">Incidencias</a>
+    </li>
+{% endblock %}
+
+{% block content %}
+<p>No hay incidencias en estos momentos.</p>
+{% endblock %}

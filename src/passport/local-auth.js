@@ -44,13 +44,6 @@ passport.use('local-signup', new LocalStrategy({
         await newUser.save();
         done(null, newUser);
 
-
-
-        //upload.single("upload" /* name attribute of <file> element in your form */),
-        //    (req, res) => {
-        //        const tempPath = req.upload.path;
-        //        const targetPath = path.join(__dirname, "./uploads/image.png");
-
     }
 }));
 
