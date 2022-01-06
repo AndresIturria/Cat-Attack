@@ -41,8 +41,15 @@
 
     </form>
     <a class="btn btn-primary" href="/registrarse">Registrarse</a>
-    <a class="btn btn-primary" href="/invitado">Invitado</a>
+{#    <a class="btn btn-primary" href="/invitado">Invitado</a>#}
+
+    <form method="POST" action="/">
+
+        <input type="text" name="username" value="guest" class="invisible">
+        <input type="text" name="password" value="guest" class="invisible"/><br/>
+        <input type="submit" value="Invitado" class="btn btn-primary">
+    </form>
 
 </div>
 {% endblock %}
-{% block footer %} {% endblock %}
+{% block footer %}{% endblock %}
