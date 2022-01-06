@@ -28,7 +28,9 @@
 {% endblock %}
 
 {% block content %}
-    <a class="btn btn-outline-dark" href="/adopt_form">Poner un gato en adopción</a>
+    {% if user.username != "guest" %}
+        <a class="btn btn-outline-dark" href="/adopt_form">Poner un gato en adopción</a>
+    {% endif %}
 
     {% if adopciones|length < 1 %}
         <h3>No hay gatos en adopción en estos momentos.</h3>

@@ -28,7 +28,10 @@
 {% endblock %}
 
 {% block content %}
-    <a class="btn btn-outline-dark" href="/catsitting_form">Ofrecerse como Cat-Sitter</a>
+    {% if user.username != "guest" %}
+        <a class="btn btn-outline-dark" href="/catsitting_form">Ofrecerse como Cat-Sitter</a>
+    {% endif %}
+
 
     {% if catsitters|length < 1 %}
         <h3>No hay cat-sitters en estos momentos.</h3>
