@@ -37,5 +37,32 @@
 {% endblock %}
 
 {% block content %}
-<p>No hay incidencias en estos momentos.</p>
+
+
+    {% if incidencias|length < 1 %}
+        <h3>No hay incidencias en estos momentos.</h3>
+    {% else %}
+        {% for incidencia in incidencias %}
+
+            <div class="container">
+
+                <div class="incidencias">
+                    <div class="incidencia-body">
+                        <h4 class="incidencia-heading">{{ incidencia.name }}</h4>
+
+                        <div class="incidencia-description">
+                            <br><b>Denuncia enviada por:</b> {{ incidencia.issuer }}
+                            <br><b>Tipo de denuncia:</b> {{ incidencia.type }}
+                            <br><b>Publicación denunciada:</b> {{ incidencia.target }}
+                            <br><b>Descripción:</b> {{ incidencia.desc }}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+
+
+    {% endif %}
 {% endblock %}
