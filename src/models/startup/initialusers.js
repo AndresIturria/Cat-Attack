@@ -1,5 +1,5 @@
-User = require('../models/user')
-require('../database');
+User = require('../user')
+require('../../database');
 const bcrypt = require('bcrypt-nodejs');
 
 async function initDB() {

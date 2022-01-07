@@ -1,5 +1,5 @@
-Incidencia = require('../models/incidencias')
-require('../database');
+Incidencia = require('../incidencias')
+require('../../database');
 
 async function initDB() {
     try{

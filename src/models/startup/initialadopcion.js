@@ -1,5 +1,5 @@
-Adopcion = require('../models/adopcion')
-require('../database');
+Adopcion = require('../adopcion')
+require('../../database');
 
 async function initDB() {
     try{

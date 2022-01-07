@@ -1,5 +1,5 @@
-Consejos = require('../models/consejos')
-require('../database');
+Consejos = require('../consejos')
+require('../../database');
 
 async function initDB() {
     try{

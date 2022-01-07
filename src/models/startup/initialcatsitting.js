@@ -1,5 +1,5 @@
-CatSitting = require('../models/catsitting')
-require('../database');
+CatSitting = require('../catsitting')
+require('../../database');
 
 async function initDB() {
     try{
