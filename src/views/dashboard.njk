@@ -21,15 +21,16 @@
     <li class="nav-item">
         <a class="nav-link" href="/miperfil">Mi Perfil</a>
     </li>
+
+    {% if user.isAdmin == true %}
+        <li class="nav-item">
+            <a class="nav-link" style="color: #FF0000" href="/incidencias">Incidencias</a>
+        </li>
+    {% endif %}
+
     <li class="nav-item">
         <a class="nav-link" href="/logout">Logout</a>
     </li>
-
-    {% if user.isAdmin == true %}
-    <li class="nav-item">
-        <a class="nav-link" style="color: #FF0000" href="/incidencias">Incidencias</a>
-    </li>
-    {% endif %}
 
 
 
