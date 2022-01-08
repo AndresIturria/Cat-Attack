@@ -1,8 +1,11 @@
 {% extends "layoutNav.njk" %}
 
 {% block head %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Adopción</title>
     <link rel="stylesheet" href="/stylesheets/adopcion.css">
+
 {% endblock %}
 
 {% block nav %}
@@ -55,7 +58,13 @@
                             <br><b>Esterilizado:</b> {{ adopcion.neutered }}
                             <br><b>Raza:</b> {{ adopcion.breed }}
                             <br><b>Peso:</b> {{ adopcion.weight }}
+
                         </div>
+
+                        <form id="incidencia" method="POST" action="/enviar_incidencia" style="text-align:center">
+                            <input type="button" id="enviar-incidencia" value="" onclick="history.back()">
+                            <img id="warning" src=/img/warning.png">
+                        </form>
                     </div>
                 </div>
             </div>
@@ -68,4 +77,12 @@
 
 {% endblock %}
 
-    {% block footer %} {% endblock %}
+{% block footer %}
+    <script type="text/javascript">
+
+        $("#warning").click(function(e) {
+            $("#enviar-incidencia").click();
+        });
+
+    </script>
+{% endblock %}

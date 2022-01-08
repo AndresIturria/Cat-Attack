@@ -1,0 +1,54 @@
+{% extends "layout.njk" %}
+
+
+{% block head %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Incidencia</title>
+    <link rel="stylesheet" href="/stylesheets/enviar_incidencia.css">
+
+{% endblock %}
+
+{% block header %}
+    <div class="registrarse-header">
+        <h2 class="h2-title" style="text-align:center"> Formulario de envío de incidencia </h2>
+    </div>
+
+{% endblock %}
+
+
+{% block content %}
+
+    {% if signupMessage  %}
+        <div><h5>{{ signupMessage }}</h5></div>
+    {% endif %}
+
+
+    <div class="container">
+        <form id="incidencia" method="POST" action="/enviar_incidencia" style="text-align:center">
+                            <input type="button" id="enviar-incidencia" value="" onclick="history.back()">
+                            <img id="warning" src=/img/warning.png">
+        </form>
+    </div>
+
+{% endblock %}
+{% block footer %}
+    <script type='text/javascript'>
+        function check(input) {
+            if (input.value != document.getElementById('password').value) {
+                input.setCustomValidity('Password Must be Matching.');
+            } else {
+                // input is valid -- reset the error message
+                input.setCustomValidity('');
+            }
+        }
+    </script>
+
+    <script type="text/javascript">
+
+        $("#profile-pic").click(function(e) {
+            $("#upload").click();
+        });
+
+    </script>
+{% endblock %}

@@ -52,3 +52,11 @@
     padding-right: 15px;
 
 }
+
+#enviar-incidencia{
+    display: none;
+}
+#warning{
+    width: 100%;
+    height: auto;
+}
