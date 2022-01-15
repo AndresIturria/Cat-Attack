@@ -59,6 +59,7 @@ app.use('/catsitting', isAuthenticated, require('./routes/catsitting'));
 app.use('/catsitting_form', isAuthenticated, require('./routes/catsitting_form'));
 
 app.use('/incidencias', isAuthenticated, require('./routes/incidencias'));
+app.use('/chat', isAuthenticated, require('./routes/chat'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

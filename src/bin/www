@@ -9,6 +9,12 @@ var debug = require('debug')('catattack:server');
 var http = require('http');
 
 /**
+ * Creamos subservidor de chat dentro del servidor original.
+ */
+
+const {Server} = require("socket.io");
+
+/**
  * Get port from environment and store in Express.
  */
 
@@ -20,6 +26,7 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
+const io = new Server(server);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -28,6 +35,22 @@ var server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+
+
+/**
+ * Lógica de servidor de chat.
+ */
+
+io.on('connection', (socket) => {
+  console.log("Usuario conectado.");
+  socket.on('chat message', (msg) => {
+    io.emit('chat message', msg);
+  })
+  socket.on('disconnect', ()=> {
+    console.log("Usuario desconectado.");
+      }
+  )
+} );
 
 /**
  * Normalize a port into a number, string, or false.

@@ -25,6 +25,10 @@
         <a class="nav-link" href="/miperfil">Mi Perfil</a>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link" href="/chat">Chat</a>
+    </li>
+
     {% if user.isAdmin == true %}
     <li class="nav-item">
         <a class="nav-link" style="color: #FF0000" href="/incidencias">Incidencias</a>
@@ -63,7 +67,7 @@
 
                         <form id="incidencia" method="POST" action="/enviar_incidencia" style="text-align:center">
                             <input type="button" id="enviar-incidencia" value="" onclick="history.back()">
-                            <img id="warning" src=/img/warning.png">
+                            <img id="warning" src=/img/warning.png" alt="incidencia">
                         </form>
                     </div>
                 </div>

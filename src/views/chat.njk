@@ -1,0 +1,80 @@
+{% extends "layoutNav.njk" %}
+
+{% block head %}
+    <title>Chat en tiempo real</title>
+    <link rel="stylesheet" href="/stylesheets/chat.css">
+{% endblock %}
+
+{% block nav %}
+<li class="nav-item">
+    <a class="nav-link" href="/dashboard">Inicio<span class="sr-only"></span></a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="/adopcion">Adopción</a>
+</li>
+<li class="nav-item active">
+    <a class="nav-link" href="/consejos">Consejos</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="/catsitting">Cat-Sitters</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="/miperfil">Mi Perfil</a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link" href="#">Chat</a>
+</li>
+
+{% if user.isAdmin == true %}
+    <li class="nav-item">
+        <a class="nav-link" style="color: #FF0000" href="/incidencias">Incidencias</a>
+    </li>
+{% endif %}
+
+<li class="nav-item">
+    <a class="nav-link" href="/logout">Logout</a>
+</li>
+
+{% endblock %}
+
+{% block content %}
+
+<div>
+    <h3> Bienvenido al chat en tiempo real de Cat-Attack. Usa la barra de abajo para enviar mensajes e interaccionar con otros usuarios. </h3>
+    <ul id="messages"></ul>
+
+    <form id="chatform">
+        <input type="text" id="input">
+        <button id="botonchat">Enviar</button>
+    </form>
+
+</div>
+
+{% endblock %}
+
+
+{% block footer %}
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+        const socket = io();
+        const chatform = document.getElementById("chatform");
+        const input = document.getElementById("input");
+        const list = document.getElementById("messages");
+
+        //servidor toma info del input y reenvía a todos
+        chatform.addEventListener('submit', function(e){
+            e.preventDefault();
+            if(input.value){
+                socket.emit('chat message', input.value);
+                input.value = "";
+            }
+        });
+        //escuchar chats que reenvia el servidor
+        socket.on('chat message', function(msg){
+            const item = document.createElement('li');
+            item.textContent = msg;
+            list.appendChild(item);
+        });
+    </script>
+{% endblock %}

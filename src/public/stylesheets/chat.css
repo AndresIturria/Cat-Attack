@@ -1,0 +1,22 @@
+form{
+    background: lightslategray;
+    padding: 5px;
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+#input{
+    flex-grow: 10;
+}
+#botonchat{
+    flex-grow: 1;
+}
+#messages{
+    list-style-type: none;
+}
+#messages > li:nth-child(odd){
+    background: #F6F3EB;
+    text-align:right;
+}
