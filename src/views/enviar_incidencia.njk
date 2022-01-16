@@ -27,8 +27,19 @@
 
                 <form id="incidenciaform" method="POST" action="/enviar_incidencia">
 
-                    <b class="datalabel"> Denunciante: </b> </br>
-                    <b class="datalabel"> Post denunciado: </b> </br>
+                    <b class="datalabel"> Denunciante:</b> <p> {{ user.username }} </p> </br>
+                    <b class="datalabel"> Post denunciado: </b> <p>  </p></br>
+
+                    </br>
+
+                    <label class="datalabel" for="target">Nombre del gato/catsitter:</label>
+                    <input name="target" id="target" type="text" required="required">
+
+                    <label class="datalabel" for="type">Tipo de anuncio reportado:</label>
+                    <select name="type" id="type" required="required">
+                        <option value="Adopción"">Adopción</option>
+                        <option value="Catsitter">Catsitter</option>
+                    </select>
 
                     </br>
 
@@ -36,7 +47,7 @@
 
                     </br>
 
-                    <textarea required='required' rows="5" cols="150"></textarea>
+                    <textarea name="desc" id="desc" required='required' rows="5" cols="150"></textarea>
 
                     </br>
 
@@ -54,22 +65,4 @@
 {% endblock %}
 
 {% block footer %}
-    <script type='text/javascript'>
-        function check(input) {
-            if (input.value != document.getElementById('password').value) {
-                input.setCustomValidity('Password Must be Matching.');
-            } else {
-                // input is valid -- reset the error message
-                input.setCustomValidity('');
-            }
-        }
-    </script>
-
-    <script type="text/javascript">
-
-        $("#profile-pic").click(function(e) {
-            $("#upload").click();
-        });
-
-    </script>
 {% endblock %}

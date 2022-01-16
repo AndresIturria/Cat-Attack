@@ -18,5 +18,4 @@ form{
 }
 #messages > li:nth-child(odd){
     background: #F6F3EB;
-    text-align:right;
 }

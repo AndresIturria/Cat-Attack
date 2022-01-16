@@ -66,11 +66,11 @@
         chatform.addEventListener('submit', function(e){
             e.preventDefault();
             if(input.value){
-                //falta input2 = {{ user.firstName }} + input.values
                 socket.emit('chat message', input.value);
                 input.value = "";
             }
         });
+
         //escuchar chats que reenvia el servidor
         socket.on('chat message', function(msg){
             const item = document.createElement('li');

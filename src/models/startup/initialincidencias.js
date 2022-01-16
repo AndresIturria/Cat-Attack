@@ -24,7 +24,15 @@ async function initDB() {
             target: "Boo",
             issuer: "test",
             type: "Adopción",
-            desc: "no se indica su peso",
+            desc: "No se indica su peso.",
+            status: "false",
+        },
+
+        {
+            target: "Camila",
+            issuer: "test",
+            type: "Catsitter",
+            desc: "Muy caro el precio",
             status: "false",
         }
     ];
