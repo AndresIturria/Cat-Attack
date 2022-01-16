@@ -43,6 +43,7 @@
 {% endblock %}
 
 {% block content %}
+
     {% if user.username != "guest" %}
         <a class="btn btn-outline-dark" href="/adopt_form">Poner un gato en adopción</a>
     {% endif %}
@@ -63,13 +64,17 @@
                             <br><b>Raza:</b> {{ adopcion.breed }}
                             <br><b>Peso:</b> {{ adopcion.weight }}
 
-                        </div>
+                            <br>
+                            <br>
+                            <a href="/enviar_incidencia">
+                                <img id="warning" src="/img/warning.png" alt="Warning">
+                            </a>
 
-                        <form id="incidencia" method="POST" action="/enviar_incidencia" style="text-align:center">
-                            <input type="button" id="enviar-incidencia" value="" onclick="history.back()">
-                            <img id="warning" src=/img/warning.png" alt="incidencia">
-                        </form>
+                        </div>
                     </div>
+
+
+
                 </div>
             </div>
 

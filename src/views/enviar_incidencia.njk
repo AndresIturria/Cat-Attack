@@ -4,7 +4,7 @@
 {% block head %}
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Incidencia</title>
+    <title>Envío de incidencia</title>
     <link rel="stylesheet" href="/stylesheets/enviar_incidencia.css">
 
 {% endblock %}
@@ -16,22 +16,43 @@
 
 {% endblock %}
 
-
 {% block content %}
 
-    {% if signupMessage  %}
-        <div><h5>{{ signupMessage }}</h5></div>
-    {% endif %}
-
-
     <div class="container">
-        <form id="incidencia" method="POST" action="/enviar_incidencia" style="text-align:center">
-                            <input type="button" id="enviar-incidencia" value="" onclick="history.back()">
-                            <img id="warning" src=/img/warning.png">
-        </form>
+        <div class="incidencia">
+
+            <h2 class="h2-title"> ¿Estás seguro de que deseas reportar esta publicación? </h2>
+
+            <div class="incidencia-form">
+
+                <form id="incidenciaform" method="POST" action="/enviar_incidencia">
+
+                    <b class="datalabel"> Denunciante: </b> </br>
+                    <b class="datalabel"> Post denunciado: </b> </br>
+
+                    </br>
+
+                    <b class="textarealabel"> A continuación, escriba la descripción de la incidencia: </b> </br>
+
+                    </br>
+
+                    <textarea required='required' rows="5" cols="150"></textarea>
+
+                    </br>
+
+                    <input type="button" class="btn btn-primary" value="Volver atrás" onclick="history.back()">
+                    <input type="submit" class="btn btn btn-danger" value="Enviar incidencia">
+
+
+                </form>
+            </div>
+        </div>
     </div>
 
+    <h2 class="h2-blank"> </h2>
+
 {% endblock %}
+
 {% block footer %}
     <script type='text/javascript'>
         function check(input) {

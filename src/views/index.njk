@@ -30,24 +30,23 @@
             <!-- Para filtrar la contraseña poner en el input de password pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" -->
         </div>
 
-        <input type="submit" value="Iniciar Sesión" class="btn btn-primary">
+
+        <a class="btn btn-primary" href="/registrarse">Registrarse</a>
+        <input type="submit" value="Iniciar Sesión" class="btn btn-success">
+
         <br>
         <br>
         <a href="/">Se me olvidó la contraseña</a>
-        <br>
-        <br>
+
         <!--<input type="submit" value="      Crear  Usuario      " class="btn btn-primary">-->
         <!--<input type="submit" value="Entrar Como Invitado" class="btn btn-primary">-->
 
     </form>
-    <a class="btn btn-primary" href="/registrarse">Registrarse</a>
-{#    <a class="btn btn-primary" href="/invitado">Invitado</a>#}
 
     <form method="POST" action="/">
-
         <input type="text" name="username" value="guest" class="invisible">
         <input type="text" name="password" value="guest" class="invisible"/><br/>
-        <input type="submit" value="Invitado" class="btn btn-primary">
+        <input type="submit" value="Entrar como invitado" class="btn btn-info">
     </form>
 
 </div>

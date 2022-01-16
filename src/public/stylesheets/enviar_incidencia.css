@@ -1,0 +1,41 @@
+.h2-title{
+    padding: 1%;
+    text-align:center;
+}
+
+.container{
+    padding: 1%;
+    background: #F6F3EB;
+    min-height: 500px;
+}
+
+.incidencia-form {
+    text-align:center;
+}
+
+.btn-primary {
+    float: left;
+    margin: 4px;
+}
+.btn-danger{
+    float: right;
+    margin: 4px;
+}
+
+.btn {
+    bottom: 0;
+}
+.datalabel{
+    font-size: 20px;
+    color: dodgerblue;
+}
+
+.textarealabel{
+    font-size: 20px;
+}
+
+textarea {
+    resize: none;
+    height: 200px;
+    width: 800px;
+}

@@ -9,24 +9,17 @@
     background: #F6F3EB;
     padding: 3em;
     grid-template-areas:
-    "info info info"
-    "info info info"
-    "info info info";
+    "info info"
+    "info info";
     grid-area: incidencias;
 }
 
 .incidencia-body {
     display: grid;
     grid-template-areas:
-    ". title ."
-    "description description description"
-    "description description description";
+    "description description"
+    "description description";
     grid-area: info;
-}
-.incidencia-heading {
-    grid-area: title;
-    font-size: 60px;
-    color: cadetblue;
 }
 
 .incidencia-description {

@@ -41,7 +41,7 @@
 {% block content %}
 
 <div>
-    <h3> Bienvenido al chat de Cat-Attack.</h3>
+    <h3> Bienvenido al chat de Cat-Attack, {{ user.firstName }}.</h3>
     <ul id="messages"></ul>
 
     <form id="chatform">
@@ -66,6 +66,7 @@
         chatform.addEventListener('submit', function(e){
             e.preventDefault();
             if(input.value){
+                //falta input2 = {{ user.firstName }} + input.values
                 socket.emit('chat message', input.value);
                 input.value = "";
             }

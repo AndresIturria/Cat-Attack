@@ -59,6 +59,7 @@ app.use('/catsitting', isAuthenticated, require('./routes/catsitting'));
 app.use('/catsitting_form', isAuthenticated, require('./routes/catsitting_form'));
 app.use('/consejo_form', isAuthenticated, require('./routes/consejo_form'));
 app.use('/incidencias', isAuthenticated, require('./routes/incidencias'));
+app.use('/enviar_incidencia', isAuthenticated, require('./routes/enviar_incidencia'));
 app.use('/chat', isAuthenticated, require('./routes/chat'));
 app.use('/perfil_form_foto', isAuthenticated, require('./routes/perfil_form_foto'));
 app.use('/perfil_form_password', isAuthenticated, require('./routes/perfil_form_password'));

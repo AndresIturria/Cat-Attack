@@ -11,7 +11,7 @@
 
 {% block header %}
   <div class="registrarse-header">
-    <h2 class="h2-title" style="text-align:center"> Formulario de Registro en Cat-Attack </h2>
+    <h2 class="h2-title"> Formulario de Registro en Cat-Attack </h2>
   </div>
 
 {% endblock %}
@@ -19,17 +19,13 @@
 
 {% block content %}
 
-  {% if signupMessage  %}
-    <div><h5>{{ signupMessage }}</h5></div>
-  {% endif %}
-
 
 <div class="container">
   <div class="signup">
     <img id="profile-pic" src="/img/gatomaleta.jpg" alt="Sample photo">
     <p class="photo-desc"> Haz click en la imagen para cambiar tu foto de perfil. </p>
     <div class="signup-form">
-      <form id="registro" method="POST" action="/registrarse" style="text-align:center" encType="multipart/form-data">
+      <form id="registro" method="POST" action="/registrarse" encType="multipart/form-data">
 
         <label for="firstName">Nombre:</label>
         <input name="firstName" type="text"  class="form-control" id="firstName" required="required"/><br />
@@ -62,8 +58,9 @@
 
         <br />
 
-        <input type="submit" class="btn btn-primary" value="Registrarse">
-        <input type="button" onclick="location.href='/'" class="btn btn-outline-secondary" value="Cancelar" style="color:black">
+        <input type="button" class="btn btn-danger" onclick="location.href='/'"  value="Cancelar">
+        <input type="submit" class="btn btn-success" value="Registrarse">
+
 
         <br />
 
@@ -72,7 +69,6 @@
   </div>
 </div>
 
-  <h2 class="h2-blank"> </h2>
 
 {% endblock %}
 {% block footer %}

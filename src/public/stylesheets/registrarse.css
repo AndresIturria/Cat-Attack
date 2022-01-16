@@ -1,5 +1,6 @@
 .h2-title{
     padding: 1%;
+    text-align:center;
 }
 
 
@@ -32,11 +33,19 @@
     grid-area: signup-form;
     font-size: 120%;
 }
-
+#registro {
+    text-align:center;
+}
 #upload {
     display: none;
 }
 
-.h2-blank{
-    padding: 1%;
+.btn-success {
+    float: right;
+    margin: 4px;
+}
+
+.btn-danger{
+    float: left;
+    margin: 4px;
 }

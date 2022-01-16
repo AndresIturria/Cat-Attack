@@ -40,3 +40,12 @@
 .h2-blank{
     padding: 1%;
 }
+
+.btn-success {
+    float: right;
+    margin: 4px;
+}
+
+.btn-primary{
+    margin: 4px;
+}
