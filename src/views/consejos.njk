@@ -22,9 +22,11 @@
         <a class="nav-link" href="/miperfil">Mi Perfil</a>
     </li>
 
-    <li class="nav-item">
-        <a class="nav-link" href="/chat">Chat</a>
-    </li>
+    {% if user.username != "guest" %}
+        <li class="nav-item">
+            <a class="nav-link" href="/chat">Chat</a>
+        </li>
+    {% endif %}
 
     {% if user.isAdmin == true %}
         <li class="nav-item">

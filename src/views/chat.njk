@@ -6,25 +6,27 @@
 {% endblock %}
 
 {% block nav %}
-<li class="nav-item">
-    <a class="nav-link" href="/dashboard">Inicio<span class="sr-only"></span></a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="/adopcion">Adopción</a>
-</li>
-<li class="nav-item active">
-    <a class="nav-link" href="/consejos">Consejos</a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="/catsitting">Cat-Sitters</a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="/miperfil">Mi Perfil</a>
-</li>
+    <li class="nav-item">
+        <a class="nav-link" href="/dashboard">Inicio<span class="sr-only"></span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/adopcion">Adopción</a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="/consejos">Consejos</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/catsitting">Cat-Sitters</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/miperfil">Mi Perfil</a>
+    </li>
 
-<li class="nav-item">
-    <a class="nav-link" href="#">Chat</a>
-</li>
+    {% if user.username != "guest" %}
+        <li class="nav-item">
+            <a class="nav-link" href="#">Chat</a>
+        </li>
+    {% endif %}
 
 {% if user.isAdmin == true %}
     <li class="nav-item">

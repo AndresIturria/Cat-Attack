@@ -22,9 +22,11 @@
         <a class="nav-link" href="/miperfil">Mi Perfil</a>
     </li>
 
+    {% if user.username != "guest" %}
     <li class="nav-item">
         <a class="nav-link" href="/chat">Chat</a>
     </li>
+    {% endif %}
 
     {% if user.isAdmin == true %}
     <li class="nav-item">
@@ -61,9 +63,11 @@
 
                             <br>
                             <br>
-                            <a href="/enviar_incidencia">
-                                <img id="warning" src="/img/warning.png" alt="Warning">
-                            </a>
+                            {% if user.username != "guest" %}
+                                <a href="/enviar_incidencia">
+                                    <img id="warning" src="/img/warning.png" alt="Warning">
+                                </a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
