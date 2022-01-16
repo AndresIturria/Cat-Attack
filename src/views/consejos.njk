@@ -42,6 +42,10 @@
 
 {% block content %}
 
+    {% if user.isAdmin %}
+        <a class="btn btn-outline-dark" href="/consejo_form">Publicar un consejo</a>
+    {% endif %}
+
 
     {% if consejos|length < 1 %}
     <h3>No hay consejos en estos momentos.</h3>

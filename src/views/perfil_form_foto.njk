@@ -1,0 +1,70 @@
+{% extends "layout.njk" %}
+
+
+{% block head %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Registro Cat-Attack</title>
+    <link rel="stylesheet" href="/stylesheets/registrarse.css">
+
+{% endblock %}
+
+{% block header %}
+  <div class="registrarse-header">
+    <h2 class="h2-title" style="text-align:center"> Formulario de Registro en Cat-Attack </h2>
+  </div>
+
+{% endblock %}
+
+
+{% block content %}
+
+  {% if signupMessage  %}
+    <div><h5>{{ signupMessage }}</h5></div>
+  {% endif %}
+
+
+<div class="container">
+  <div class="signup">
+    <img id="profile-pic" src="/img/gatomaleta.jpg" alt="Sample photo">
+    <p class="photo-desc"> Haz click en la imagen para cambiar tu foto de perfil. </p>
+    <div class="signup-form">
+      <form id="registro" method="POST" action="/perfil_form_foto" style="text-align:center" encType="multipart/form-data">
+
+        <input type="file" name="profilepic" id="upload" required="required">
+
+        <br />
+
+        <input type="submit" class="btn btn-primary" value="Cambiar foto">
+        <input type="button" onclick="location.href='/miperfil'" class="btn btn-outline-secondary" value="Cancelar" style="color:black">
+
+        <br />
+
+      </form>
+    </div>
+  </div>
+</div>
+
+  <h2 class="h2-blank"> </h2>
+
+{% endblock %}
+{% block footer %}
+  <script type='text/javascript'>
+    function check(input) {
+      if (input.value != document.getElementById('password').value) {
+        input.setCustomValidity('Password Must be Matching.');
+      } else {
+        // input is valid -- reset the error message
+        input.setCustomValidity('');
+      }
+    }
+  </script>
+
+  <script type="text/javascript">
+
+    $("#profile-pic").click(function(e) {
+      $("#upload").click();
+    });
+
+  </script>
+{% endblock %}

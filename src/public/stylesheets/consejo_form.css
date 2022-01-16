@@ -1,0 +1,42 @@
+.h2-title{
+    padding: 1%;
+}
+
+
+.container{
+    padding: 1%;
+    background: #F6F3EB;
+}
+
+
+.signup{
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+    grid-template-rows: 0.5fr 1fr;
+    gap: 1px 0px;
+    grid-template-areas:
+    "photo signup-form"
+    "photo-desc signup-form";
+}
+
+#catsitting-photo {
+    margin: 20px;
+    grid-area: photo;
+    width: 300px;
+    height: 300px;
+    cursor: pointer;
+}
+
+
+.signup-form {
+    grid-area: signup-form;
+    font-size: 120%;
+}
+
+#upload {
+    display: none;
+}
+
+.h2-blank{
+    padding: 1%;
+}

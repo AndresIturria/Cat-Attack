@@ -57,9 +57,11 @@ app.use('/miperfil', isAuthenticated, require('./routes/miperfil'));
 app.use('/adopt_form', isAuthenticated, require('./routes/adopt_form'));
 app.use('/catsitting', isAuthenticated, require('./routes/catsitting'));
 app.use('/catsitting_form', isAuthenticated, require('./routes/catsitting_form'));
-
+app.use('/consejo_form', isAuthenticated, require('./routes/consejo_form'));
 app.use('/incidencias', isAuthenticated, require('./routes/incidencias'));
 app.use('/chat', isAuthenticated, require('./routes/chat'));
+app.use('/perfil_form_foto', isAuthenticated, require('./routes/perfil_form_foto'));
+//app.use('/perfil_form_password', isAuthenticated, require('./routes/perfil_form_password'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
