@@ -27,15 +27,12 @@
 
                 <form id="incidenciaform" method="POST" action="/enviar_incidencia">
 
-                    <b class="datalabel"> Denunciante:</b> <p> {{ user.username }} </p> </br>
-                    <b class="datalabel"> Post denunciado: </b> <p>  </p></br>
-
+                    <b class="datalabel"> Denunciante: {{ user.username }} </b>
                     </br>
-
-                    <label class="datalabel" for="target">Nombre del gato/catsitter:</label>
+                    <label class="datalabel" for="target"><b>Nombre del gato/catsitter denunciado:</b></label>
                     <input name="target" id="target" type="text" required="required">
-
-                    <label class="datalabel" for="type">Tipo de anuncio reportado:</label>
+                    </br>
+                    <label class="datalabel" for="type"><b>Tipo de anuncio reportado:</b></label>
                     <select name="type" id="type" required="required">
                         <option value="Adopción"">Adopción</option>
                         <option value="Catsitter">Catsitter</option>

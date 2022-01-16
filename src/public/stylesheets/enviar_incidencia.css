@@ -6,7 +6,7 @@
 .container{
     padding: 1%;
     background: #F6F3EB;
-    min-height: 700px;
+    min-height: 550px;
     /* el valor bueno es 500*/
 }
 
@@ -29,10 +29,12 @@
 .datalabel{
     font-size: 20px;
     color: dodgerblue;
+    margin: 10px;
 }
 
 .textarealabel{
     font-size: 20px;
+    margin: 20px;
 }
 
 textarea {
