@@ -1,5 +1,9 @@
 # Cat-Attack
 
+## Sobre Cat-Attack
+
+Este proyecto busca solucionar en una misma aplicación web cualquier duda o situación a la que se enfrentan los dueños de un gato. Para poder aprovechar los servicios de esta aplicación, es necesario realizar un registro. Los usuarios registrados pueden leer diversos consejos para cuidar a sus mascotas, pueden poner o buscar gatos en adopción y encontrar el cuidador perfecto para que puedan sentirse cómodos al viajar, dejando su mascota en manos de alguien de confianza.
+
 ## Dev Instructions
 
 Install dependencies:
