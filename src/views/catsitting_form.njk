@@ -43,7 +43,7 @@
                     <label for="price">Precio:</label>
                     <input name="price" type="number" placeholder="Recuerda que es un coste diario. El promedio es 15 euros por noche." min="0" class="form-control" id="price" required="required"/><br />
 
-                    <input type="file" name="fotocatsitting" id="upload" required="required">
+                    <input type="file" name="fotocatsitting" id="upload" required="required" onchange="update(event)">
 
                     <br />
 
@@ -68,6 +68,16 @@
         $("#catsitting-photo").click(function(e) {
             $("#upload").click();
         });
+
+    </script>
+
+    <script type="text/javascript">
+
+        var update = function(event) {
+
+            var output = document.getElementById('catsitting-photo');
+            output.src = URL.createObjectURL(event.target.files[0]);
+        }
 
     </script>
 {% endblock %}

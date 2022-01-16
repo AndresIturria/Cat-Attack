@@ -31,7 +31,7 @@
     <div class="signup-form">
       <form id="registro" method="POST" action="/perfil_form_foto" style="text-align:center" encType="multipart/form-data">
 
-        <input type="file" name="profilepic" id="upload" required="required">
+        <input type="file" name="profilepic" id="upload" required="required" onchange="update(event)">
 
         <br />
 
@@ -49,22 +49,23 @@
 
 {% endblock %}
 {% block footer %}
-  <script type='text/javascript'>
-    function check(input) {
-      if (input.value != document.getElementById('password').value) {
-        input.setCustomValidity('Password Must be Matching.');
-      } else {
-        // input is valid -- reset the error message
-        input.setCustomValidity('');
-      }
-    }
-  </script>
+
 
   <script type="text/javascript">
 
     $("#profile-pic").click(function(e) {
       $("#upload").click();
     });
+
+  </script>
+
+  <script type="text/javascript">
+
+    var update = function(event) {
+
+      var output = document.getElementById('profile-pic');
+      output.src = URL.createObjectURL(event.target.files[0]);
+    }
 
   </script>
 {% endblock %}

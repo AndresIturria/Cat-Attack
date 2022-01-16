@@ -36,12 +36,12 @@
                     <label for="contenido">contenido del consejo</label>
                     <input type="text" name="contenido" id="place" class="form-control" required="required"/>
 
-                    <input type="file" name="fotoconsejo" id="upload" required="required">
+                    <input type="file" name="fotoconsejo" id="upload" required="required" onchange="update(event)">
 
                     <br />
 
                     <input type="submit" class="btn btn-primary" value="Enviar">
-                    <a class="btn btn-primary" href="/catsitting">Volver</a>
+                    <a class="btn btn-primary" href="/consejos">Volver</a>
 
 
                     <br />
@@ -61,6 +61,16 @@
         $("#catsitting-photo").click(function(e) {
             $("#upload").click();
         });
+
+    </script>
+
+    <script type="text/javascript">
+
+        var update = function(event) {
+
+            var output = document.getElementById('catsitting-photo');
+            output.src = URL.createObjectURL(event.target.files[0]);
+        }
 
     </script>
 {% endblock %}

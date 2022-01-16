@@ -58,7 +58,7 @@
         <label for="passwordConfirmation">Confirmar contraseña:</label>
         <input name="passwordConfirmation" type="password"  class="form-control" id="passwordConfirmation" oninput="check(this)" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/><br/>
 
-        <input type="file" name="profilepic" id="upload" required="required">
+        <input type="file" name="profilepic" id="upload" required="required" onchange="update(event)">
 
         <br />
 
@@ -92,6 +92,16 @@
     $("#profile-pic").click(function(e) {
       $("#upload").click();
     });
+
+  </script>
+
+  <script type="text/javascript">
+
+    var update = function(event) {
+
+      var output = document.getElementById('profile-pic');
+      output.src = URL.createObjectURL(event.target.files[0]);
+      }
 
   </script>
 {% endblock %}

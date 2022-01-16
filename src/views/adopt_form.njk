@@ -79,7 +79,7 @@
                         <option value="Desconocido" selected>Desconocido</option>
                     </select> <br /><br />
 
-                    <input type="file" name="fotogato" id="upload" required="required">
+                    <input type="file" name="fotogato" id="upload" required="required" onchange="update(event)">
 
                     <br />
 
@@ -104,6 +104,17 @@
         $("#adopt-photo").click(function(e) {
             $("#upload").click();
         });
+
+    </script>
+
+    <script type="text/javascript">
+
+        var update = function(event) {
+
+            var output = document.getElementById('adopt-photo');
+            output.src = URL.createObjectURL(event.target.files[0]);
+            console.log(URL.createObjectURL(event.target.files[0]))
+        }
 
     </script>
 {% endblock %}
