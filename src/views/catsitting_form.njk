@@ -23,17 +23,19 @@
     <div class="container">
         <div class="signup">
             <img id="catsitting-photo" src="/img/catsitting-form.png" alt="Sample photo">
-            <p class="photo-desc"> Haz click en la imagen para adjuntar una foto. ¡Te recomendamos publicar una foto con un gato! Darás más confianza.</p>
+            <p class="photo-desc"> Haz click en la imagen para adjuntar una foto. </br>
+                ¡Te recomendamos publicar una foto con un gato! Darás más confianza. </p>
+
             <div class="signup-form">
                 <form class="catsittingform" method="POST" action="/catsitting_form" id="catsitting_form" encType="multipart/form-data">
 
                     <label for="name">Nombre:</label>
                     <input name="name" type="text" placeholder="Introduce tu nombre" maxlength="15" class="form-control" id="name" required="required"/><br />
 
-                    <label for="description">¡Háblanos sobre tí!:</label>
+                    <label for="description">Háblanos sobre ti:</label>
                     <input name="description" type="text" placeholder="¿Por qué deberían escogerte? ¡Cuénta tus experiencias!" maxlength="100" class="form-control" id="description" required="required"/><br />
 
-                    <label for="place">¿En dónde podrás cuidar del gato?</label>
+                    <label for="place">¿En qué lugar vas a cuidar del gato?:</label>
                     <select name="place" id="place" class="form-control selectpicker" required="required">
                         <option value="">Indica tu preferencia</option>
                         <option>En casa del propietario</option>
@@ -47,7 +49,7 @@
 
                     <br />
 
-                    <input type="submit" class="btn btn-primary" value="Enviar">
+                    <input type="submit" class="btn btn-success"  value="Enviar">
                     <a class="btn btn-primary" href="/catsitting">Volver</a>
 
 

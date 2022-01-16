@@ -6,6 +6,8 @@
 .container{
     padding: 1%;
     background: #F6F3EB;
+    min-height: 300px;
+    max-height: 500px;
 }
 
 
@@ -39,4 +41,13 @@
 
 .h2-blank{
     padding: 1%;
+}
+
+.btn-success {
+    float: right;
+    margin: 4px;
+}
+
+.btn-primary{
+    margin: 4px;
 }
