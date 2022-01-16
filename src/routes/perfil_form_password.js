@@ -8,15 +8,16 @@ router.route('/')
     })
 
     .post(function(req, res, next){
-        let profilepic = req.files.profilepic;
-        let uploadPath = process.cwd() + "/public/img/" + req.user.username + ".jpg";
+        const query = { username: req.user.username };
+        user = new User()
+        newPassword = user.encryptPassword(req.body.password);
+        User.findOneAndUpdate(query, { password: newPassword }, function(err){
+            res.redirect('/miperfil');
 
-        profilepic.mv(uploadPath, function (err){
-            if (err) console.log(err)
+        });
         });
 
 
-        res.redirect('/miperfil');
-    })
+
 
 module.exports = router;
